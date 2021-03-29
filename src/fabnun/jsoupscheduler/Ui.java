@@ -8,7 +8,6 @@ package fabnun.jsoupscheduler;
 import com.formdev.flatlaf.IntelliJTheme;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridBagLayout;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ComponentAdapter;
@@ -26,16 +25,14 @@ import java.io.RandomAccessFile;
 import java.io.StringBufferInputStream;
 import java.nio.channels.FileLock;
 import java.nio.file.Files;
-import java.util.Arrays;
 import java.util.Properties;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 import javax.swing.AbstractAction;
 import javax.swing.DefaultListModel;
-import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JViewport;
@@ -45,6 +42,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.UndoableEditEvent;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.Document;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
@@ -140,16 +138,17 @@ public class Ui extends javax.swing.JFrame {
     private static boolean loaded = false;
 
     private void loadGui() {
-        loadGui("_lastSave_");
+        loadGui("_lastSave_.data");
     }
 
     private void loadGui(String name) {
-        File file = new File(name + ".data");
+        File file = new File(name);
         try {
             if (file.exists()) {
                 Object[] result = (Object[]) bytes2Object(Files.readAllBytes(file.toPath()));
                 setBounds((Rectangle) result[0]);
                 map = (TreeMap<String, String>) result[1];
+                jTabbedPane1.removeAll();
                 addText("_Scheduler_", map.get("_Scheduler_"));
                 addText("_Input_", map.get("_Input_"));
                 for (String nam : map.keySet()) {
@@ -157,27 +156,29 @@ public class Ui extends javax.swing.JFrame {
                         addText(nam, map.get(nam));
                     }
                 }
-                jTabbedPane1.setSelectedIndex((int) result[2]);
-                jSplitPane1.setDividerLocation((int) result[3]);
 
                 JScrollPane c = (JScrollPane) jTabbedPane1.getComponentAt((int) result[2]);
                 JViewport viewport = c.getViewport();
                 RSyntaxTextArea textArea = (RSyntaxTextArea) viewport.getComponents()[0];
-                try {
-                    textArea.setCaretPosition((int) result[4]);
-                    textArea.setSelectionStart((int) result[5]);
-                    textArea.setSelectionEnd((int) result[6]);
-                } catch (Exception e) {
-                }
-
+                textArea.setCaretPosition((int) result[4]);
+                textArea.setSelectionStart((int) result[5]);
+                textArea.setSelectionEnd((int) result[6]);
+                
+                 jTabbedPane1.setSelectedIndex((int) result[2]);
+                jSplitPane1.setDividerLocation((int) result[3]);
+                
+                    
             } else {
                 addText("_Scheduler_", "bne.found 3h 2h 0h\nbne.page 5m 2h 10h 13h");
                 File propFile = new File("default.properties");
                 addText("_Input_", propFile.exists() ? new String(Files.readAllBytes(propFile.toPath())) : "");
             }
+            
+            loaded = true;
         } catch (IOException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        
     }
 
     private String oldInput = "";
@@ -234,10 +235,9 @@ public class Ui extends javax.swing.JFrame {
     private void saveGui(String name) {
         if (loaded) {
             final JFrame este = this;
-
             debouncer.debounce(Void.class, () -> {
                 try {
-                    File file = new File(name + ".data");
+                    File file = new File(name);
                     int tabIdx = jTabbedPane1.getSelectedIndex();
                     String tab = jTabbedPane1.getTitleAt(tabIdx);
                     jButton2.setEnabled(!tab.equals("_Scheduler_") && !tab.equals("_Input_"));
@@ -251,10 +251,11 @@ public class Ui extends javax.swing.JFrame {
             }, 500, TimeUnit.MILLISECONDS);
 
         }
+        System.out.print("");
     }
 
     private void saveGui() {
-        saveGui("_lastSave_");
+        saveGui("_lastSave_.data");
     }
 
     /**
@@ -496,7 +497,7 @@ public class Ui extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(jPanel2);
@@ -527,7 +528,7 @@ public class Ui extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton1))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -537,7 +538,7 @@ public class Ui extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -600,28 +601,40 @@ public class Ui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
+    private String fileChooserFolder = ".";
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String name = JOptionPane.showInputDialog(this, "Export Name?", "commit");
-        if (name != null) {
-            saveGui(name);
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("data file (.data)", "data");
+        JFileChooser fileChooser = new JFileChooser(fileChooserFolder);
+        fileChooser.setSelectedFile(new File(fileChooserFolder));
+        fileChooser.setFileFilter(filtro);
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int valor = fileChooser.showSaveDialog(this);
+        if (valor == JFileChooser.APPROVE_OPTION) {
+            File selected = fileChooser.getSelectedFile();
+            fileChooserFolder = selected.getAbsolutePath();
+            if (!fileChooserFolder.endsWith(".data")) {
+                fileChooserFolder = fileChooserFolder + ".data";
+            }
+            saveGui(fileChooserFolder);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String[] files = new File(".").list((File file, String string) -> {
-            return string.endsWith(".data");
-        });
-        Arrays.sort(files);
-        JComboBox comboBox = new JComboBox(files);
-        JPanel panel = new JPanel(new GridBagLayout());
-        int result = JOptionPane.showConfirmDialog(this, comboBox, "Select export file",
-                JOptionPane.YES_OPTION);
-        panel.add(comboBox);
-        if (result == 0) {
-            String sel = (String) comboBox.getSelectedItem();
-            sel = sel.substring(0, sel.length() - 5);
-            loadGui(sel);
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("data file (.data)", "data");
+        JFileChooser fileChooser = new JFileChooser(fileChooserFolder);
+        fileChooser.setSelectedFile(new File(fileChooserFolder));
+        fileChooser.setFileFilter(filtro);
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int valor = fileChooser.showOpenDialog(this);
+        if (valor == JFileChooser.APPROVE_OPTION) {
+            File selected = fileChooser.getSelectedFile();
+            fileChooserFolder = selected.getAbsolutePath();
+            if (!fileChooserFolder.endsWith(".data")) {
+                fileChooserFolder = fileChooserFolder + ".data";
+            }
+            loadGui(fileChooserFolder);
         }
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     Spider spider = null;
@@ -825,11 +838,14 @@ public class Ui extends javax.swing.JFrame {
                     "/org/fife/ui/rsyntaxtextarea/themes/dark.xml"));
             theme.apply(textArea);
             textArea.setSelectionColor(Color.green.darker().darker().darker().darker());
-            textArea.setBackground(new Color(24,24,24));
+            textArea.setBackground(new Color(24, 24, 24));
         } catch (IOException ioe) { // Never happens
             ioe.printStackTrace();
         }
         textArea.setAutoIndentEnabled(true);
+        textArea.setAntiAliasingEnabled(true);
+        textArea.setCodeFoldingEnabled(false);
+
         Font font = textArea.getFont();
         textArea.setFont(new Font(font.getFontName(), font.getStyle(), 16));
         textArea.setSyntaxEditingStyle(name.equals("_Input_") ? SyntaxConstants.SYNTAX_STYLE_PROPERTIES_FILE : name.equals("_Scheduler_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS : SyntaxConstants.SYNTAX_STYLE_JAVA);
@@ -895,7 +911,7 @@ public class Ui extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             try {
                 TIcon.run(new Ui(), "icons/logo.png");
-                loaded = true;
+                
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
