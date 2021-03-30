@@ -17,10 +17,13 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 import java.io.RandomAccessFile;
 import java.io.StringBufferInputStream;
 import java.nio.channels.FileLock;
@@ -43,6 +46,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import javax.swing.text.Document;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
@@ -57,7 +61,6 @@ import org.fife.ui.rtextarea.SearchEngine;
  *
  * @author fabian
  */
-@SuppressWarnings("CallToPrintStackTrace")
 public class Ui extends javax.swing.JFrame {
 
     public static TreeMap<String, String> map = new TreeMap<>();
@@ -67,11 +70,20 @@ public class Ui extends javax.swing.JFrame {
     /**
      * Creates new form MainTest
      *
+     * @throws java.io.FileNotFoundException
      */
     @SuppressWarnings("LeakingThisInConstructor")
-    public Ui() {
+    public Ui() throws FileNotFoundException {
         if (lockInstance("lockfile")) {
+            System.setOut(new PrintStream(new FileOutputStream("out.log", true)));
+            System.setErr(new PrintStream(new FileOutputStream("err.log", true)));
             initComponents();
+            jTabbedPane1.setUI(new BasicTabbedPaneUI() {
+                @Override
+                protected int calculateTabHeight(int tabPlacement, int tabIndex, int fontHeight) {
+                    return 45; // manipulate this number however you please.
+                }
+            });
             loadGui();
 
             listModel = new DefaultListModel<>();
@@ -160,25 +172,28 @@ public class Ui extends javax.swing.JFrame {
                 JScrollPane c = (JScrollPane) jTabbedPane1.getComponentAt((int) result[2]);
                 JViewport viewport = c.getViewport();
                 RSyntaxTextArea textArea = (RSyntaxTextArea) viewport.getComponents()[0];
-                textArea.setCaretPosition((int) result[4]);
-                textArea.setSelectionStart((int) result[5]);
-                textArea.setSelectionEnd((int) result[6]);
-                
-                 jTabbedPane1.setSelectedIndex((int) result[2]);
+                try {
+                    textArea.setCaretPosition((int) result[4]);
+                    textArea.setSelectionStart((int) result[5]);
+                    textArea.setSelectionEnd((int) result[6]);
+                } catch (Exception e) {
+
+                }
+
+                jTabbedPane1.setSelectedIndex((int) result[2]);
                 jSplitPane1.setDividerLocation((int) result[3]);
-                
-                    
+
             } else {
                 addText("_Scheduler_", "bne.found 3h 2h 0h\nbne.page 5m 2h 10h 13h");
                 File propFile = new File("default.properties");
                 addText("_Input_", propFile.exists() ? new String(Files.readAllBytes(propFile.toPath())) : "");
             }
-            
+
             loaded = true;
         } catch (IOException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        
+
     }
 
     private String oldInput = "";
@@ -240,9 +255,9 @@ public class Ui extends javax.swing.JFrame {
                     File file = new File(name);
                     int tabIdx = jTabbedPane1.getSelectedIndex();
                     String tab = jTabbedPane1.getTitleAt(tabIdx);
-                    jButton2.setEnabled(!tab.equals("_Scheduler_") && !tab.equals("_Input_"));
-                    jButton10.setEnabled(!tab.equals("_Scheduler_") && !tab.equals("_Input_"));
-                    jButton11.setEnabled(!tab.equals("_Scheduler_") && !tab.equals("_Input_"));
+                    jButton2.setVisible(!tab.equals("_Scheduler_") && !tab.equals("_Input_"));
+                    jButton10.setVisible(!tab.equals("_Scheduler_") && !tab.equals("_Input_"));
+                    jButton11.setVisible(!tab.equals("_Scheduler_") && !tab.equals("_Input_"));
                     Files.write(file.toPath(), object2Bytes(new Object[]{getBounds(), map, tabIdx, jSplitPane1.getDividerLocation(), caretPosition, selStart, selEnd}));
                     updateInput();
                 } catch (Exception e) {
@@ -266,8 +281,6 @@ public class Ui extends javax.swing.JFrame {
     private void initComponents() {
 
         jToggleButton1 = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -279,13 +292,15 @@ public class Ui extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel2 = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -300,8 +315,10 @@ public class Ui extends javax.swing.JFrame {
         });
 
         jToggleButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/stop.png"))); // NOI18N
-        jToggleButton1.setText("START");
+        jToggleButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jToggleButton1.setForeground(java.awt.SystemColor.activeCaptionText);
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/play.png"))); // NOI18N
+        jToggleButton1.setText("SCHEDULE");
         jToggleButton1.setBorderPainted(false);
         jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton1.setFocusable(false);
@@ -312,37 +329,13 @@ public class Ui extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(132, 66, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/new.png"))); // NOI18N
-        jButton1.setText("NEW");
-        jButton1.setBorderPainted(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setFocusable(false);
-        jButton1.setMargin(new java.awt.Insets(3, 3, 3, 3));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setBackground(new java.awt.Color(132, 66, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/delete.png"))); // NOI18N
-        jButton2.setText("DEL");
-        jButton2.setBorderPainted(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setFocusable(false);
-        jButton2.setMargin(new java.awt.Insets(3, 3, 3, 3));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 153));
+        jButton3.setBackground(new java.awt.Color(29, 64, 59));
+        jButton3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton3.setForeground(java.awt.SystemColor.activeCaptionText);
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/export.png"))); // NOI18N
-        jButton3.setText("EXP");
+        jButton3.setText("SAVE");
         jButton3.setBorderPainted(false);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.setFocusable(false);
@@ -353,9 +346,11 @@ public class Ui extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 153, 153));
+        jButton4.setBackground(new java.awt.Color(29, 64, 59));
+        jButton4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton4.setForeground(java.awt.SystemColor.activeCaptionText);
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/import.png"))); // NOI18N
-        jButton4.setText("IMP");
+        jButton4.setText("LOAD");
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.setFocusable(false);
         jButton4.setMargin(new java.awt.Insets(3, 3, 3, 3));
@@ -365,9 +360,11 @@ public class Ui extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(204, 0, 0));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/test.png"))); // NOI18N
-        jButton5.setText("EXPLORE");
+        jButton5.setBackground(new java.awt.Color(29, 64, 59));
+        jButton5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton5.setForeground(java.awt.SystemColor.activeCaptionText);
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/net.png"))); // NOI18N
+        jButton5.setText("JSOUP");
         jButton5.setBorderPainted(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.setFocusable(false);
@@ -447,9 +444,26 @@ public class Ui extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jButton10.setBackground(new java.awt.Color(132, 66, 0));
+        jSplitPane1.setDividerLocation(800);
+
+        jButton9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton9.setForeground(java.awt.SystemColor.activeCaptionText);
+        jButton9.setText("STOP THREAD");
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.setMaximumSize(new java.awt.Dimension(0, 31));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane1.setViewportView(jList1);
+
+        jButton10.setBackground(new java.awt.Color(204, 0, 0));
+        jButton10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton10.setForeground(java.awt.SystemColor.activeCaptionText);
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/play.png"))); // NOI18N
-        jButton10.setText("RUN");
+        jButton10.setText("RUN SCRIPT");
         jButton10.setBorderPainted(false);
         jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton10.setFocusable(false);
@@ -460,7 +474,9 @@ public class Ui extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(132, 66, 0));
+        jButton11.setBackground(new java.awt.Color(29, 64, 59));
+        jButton11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton11.setForeground(java.awt.SystemColor.activeCaptionText);
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/new.png"))); // NOI18N
         jButton11.setText("REN");
         jButton11.setBorderPainted(false);
@@ -473,37 +489,79 @@ public class Ui extends javax.swing.JFrame {
             }
         });
 
-        jSplitPane1.setDividerLocation(2000);
-
-        jButton9.setText("STOP THREAD");
-        jButton9.setMaximumSize(new java.awt.Dimension(0, 31));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setBackground(new java.awt.Color(29, 64, 59));
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton2.setForeground(java.awt.SystemColor.activeCaptionText);
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/delete.png"))); // NOI18N
+        jButton2.setText("DEL");
+        jButton2.setBorderPainted(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusable(false);
+        jButton2.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        jScrollPane1.setViewportView(jList1);
+        jButton1.setBackground(new java.awt.Color(29, 64, 59));
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton1.setForeground(java.awt.SystemColor.activeCaptionText);
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/new.png"))); // NOI18N
+        jButton1.setText("NEW");
+        jButton1.setBorderPainted(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
+        jButton1.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton10)
+                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jSplitPane1.setRightComponent(jPanel2);
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTabbedPane1.setFocusable(false);
+        jTabbedPane1.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jSplitPane1.setLeftComponent(jTabbedPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -514,45 +572,34 @@ public class Ui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton1))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(jSplitPane1)
+                        .addComponent(jToggleButton1)
+                        .addContainerGap())
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1145, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                .addComponent(jSplitPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11))
+                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jToggleButton1)
+                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -591,8 +638,9 @@ public class Ui extends javax.swing.JFrame {
     Scheduler scheduler;
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         boolean activo = jToggleButton1.isSelected();
-        jToggleButton1.setBackground(activo ? Color.red : Color.green);
-        jToggleButton1.setText(activo ? "STOP" : "START");
+        jToggleButton1.setBackground(activo ? new Color(220, 0, 0) : new Color(144, 0, 0));
+        jToggleButton1.setForeground(Color.black);
+        jToggleButton1.setText(activo ? "STOP" : "SHEDULE");
         if (activo) {
             scheduler = new Scheduler(map.get("_Scheduler_"));
             scheduler.start(map);
@@ -911,7 +959,7 @@ public class Ui extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             try {
                 TIcon.run(new Ui(), "icons/logo.png");
-                
+
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

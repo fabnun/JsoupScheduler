@@ -27,10 +27,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.swing.JOptionPane;
+import org.bson.BsonDocument;
 import org.bson.Document;
+import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.conversions.Bson;
-import org.grain.mongo.MongoConfig;
 import org.json.JSONArray;
 import org.jsoup.nodes.Element;
 
@@ -110,7 +110,7 @@ public final class Tools {
         err(new Object[]{s});
     }
 
-    public static void log(Object... ss) {
+    public void log(Object... ss) {
         for (Object s : ss) {
             if (s instanceof Character) {
                 System.out.print(s);
@@ -120,7 +120,7 @@ public final class Tools {
         }
     }
 
-    public static void err(Object... ss) {
+    public void err(Object... ss) {
         for (Object s : ss) {
             if (s instanceof Character) {
                 System.err.print(s);
@@ -236,19 +236,19 @@ public final class Tools {
 
     //-----------------------------------------------------
     //			              funciones del crawler
-    public JSONObject domLoadJSON(String uri, int timeOut) throws IOException, MalformedURLException, URISyntaxException {
+    public JSONObject domLoadJSON(String uri) throws IOException, MalformedURLException, URISyntaxException {
         String string = Jsoup.connect(textEncodeURI(uri)).timeout(timeOut).userAgent(agent).ignoreContentType(true).execute().body();
         return new JSONObject(string);
     }
 
-    public JSONObject domLoadJSON(String uri, String select, boolean post, int timeout, String... params) throws IOException, MalformedURLException, URISyntaxException {
+    public JSONObject domLoadJSON(String uri, String select, boolean post, String... params) throws IOException, MalformedURLException, URISyntaxException {
         Connection conn = Jsoup.connect(uri).userAgent(agent);
         if (params != null) {
             for (int i = 0; i < params.length; i += 2) {
                 conn = conn.data(params[i], params[(i + 1)]);
             }
         }
-        conn = conn.timeout(timeout);
+        conn = conn.timeout(timeOut);
         if (post) {
             conn.post();
         } else {
@@ -258,19 +258,19 @@ public final class Tools {
         return new JSONObject(string);
     }
 
-    public JSONArray domLoadJSONArray(String uri, int timeOut) throws IOException, MalformedURLException, URISyntaxException {
+    public JSONArray domLoadJSONArray(String uri) throws IOException, MalformedURLException, URISyntaxException {
         String string = Jsoup.connect(textEncodeURI(uri)).timeout(timeOut).userAgent(agent).ignoreContentType(true).execute().body();
         return new JSONArray(string);
     }
 
-    public JSONArray domLoadJSONArray(String uri, String select, boolean post, int timeout, String... params) throws IOException, MalformedURLException, URISyntaxException {
+    public JSONArray domLoadJSONArray(String uri, String select, boolean post, String... params) throws IOException, MalformedURLException, URISyntaxException {
         Connection conn = Jsoup.connect(uri).userAgent(agent);
         if (params != null) {
             for (int i = 0; i < params.length; i += 2) {
                 conn = conn.data(params[i], params[(i + 1)]);
             }
         }
-        conn = conn.timeout(timeout);
+        conn = conn.timeout(timeOut);
         if (post) {
             conn.post();
         } else {
@@ -470,8 +470,6 @@ public final class Tools {
     }
 
     public void dbPutDoc(String collection, Document document) {
-        //JsonWriterSettings writerSettings = new JsonWriterSettings(JsonMode.SHELL, true);           
-        //logErr("PUTIN " + collection + " " + document.toJson(writerSettings));
         dbGetCollection(collection).insertOne(document);
     }
 
@@ -479,12 +477,31 @@ public final class Tools {
         Document document = dbNewDoc(values);
         dbPutDoc(collection, document);
     }
+    
+    public boolean dbUpdate(String collectionName, Object[] key, Object[] values) {
+        MongoCollection<Document> collection = dbGetCollection(collectionName);
+        try {
+            
+            Bson filter = null;
+            for(int i=0;i<key.length;i=i+2){
+                Bson thisFilter=Filters.eq((String)key[i], key[i+1]);
+                filter=filter==null?thisFilter:Filters.and(filter,thisFilter);
+            }
+                    
+            UpdateResult result = collection.updateOne(filter, new Document("$set", dbNewDoc(values)));
+            return result.getMatchedCount() == 1;
+        } catch (Exception e) {
+            err(e);
+            return false;
+        }
+
+    }
 
     public boolean dbUpdate(String collectionName, String id, Object idVal, Document document) {
         MongoCollection<Document> collection = dbGetCollection(collectionName);
         try {
             Bson filter = Filters.eq(id, idVal);
-            UpdateResult result = collection.updateOne(filter, new Document(MongoConfig.$SET, document));
+            UpdateResult result = collection.updateOne(filter, new Document("$set", document));
             return result.getMatchedCount() == 1;
         } catch (Exception e) {
             err(e);
@@ -511,68 +528,24 @@ public final class Tools {
         return dbGetCollection(collection).find(docKey).iterator().hasNext();
     }
 
-    public boolean dbExistDoc(String collection, Object[] values) {
-        return dbGetDoc(collection, dbNewDoc(values)).iterator().hasNext();
+    public boolean dbExistDoc(String collection, Object[] key) {
+        return dbGetDoc(collection, dbNewDoc(key)).iterator().hasNext();
     }
 
     public FindIterable dbGetDoc(String collection, Document docKey) {
         return dbGetCollection(collection).find(docKey);
     }
 
-    public FindIterable dbGetDoc(String collection, Object[] values) {
-        return dbGetDoc(collection, dbNewDoc(values));
+    public FindIterable dbGetDoc(String collection, Object[] key) {
+        return dbGetDoc(collection, dbNewDoc(key));
     }
 
-    public void dbDelDoc(String collection, Document doc) {
-        dbGetCollection(collection).deleteOne(doc);
+    public void dbDelDoc(String collection, Document docKey) {
+        dbGetCollection(collection).deleteOne(docKey);
     }
 
-    /**
-     * crea un indice unique en una coleccion
-     *
-     * @param collection
-     * @param keys
-     * @param unique
-     */
-    public void dbIndexAscending(String collection, String[] keys, boolean unique) {
-        IndexOptions indexOptions = new IndexOptions().unique(unique);
-        dbGetCollection(collection).createIndex(Indexes.ascending(keys), indexOptions);
-    }
-
-    /**
-     * crea un indice unique en una coleccion
-     *
-     * @param collection
-     * @param keys
-     * @param unique
-     */
-    public void dbIndexDescending(String collection, String[] keys, boolean unique) {
-        IndexOptions indexOptions = new IndexOptions().unique(unique);
-        dbGetCollection(collection).createIndex(Indexes.descending(keys), indexOptions);
-    }
-
-    /**
-     * crea un indice unique en una coleccion
-     *
-     * @param collection
-     * @param keys
-     * @param unique
-     */
-    public void dbIndexText(String collection, String keys, boolean unique) {
-        IndexOptions indexOptions = new IndexOptions().unique(unique);
-        dbGetCollection(collection).createIndex(Indexes.text(keys), indexOptions);
-    }
-
-    /**
-     * crea un indice unique en una coleccion
-     *
-     * @param collection
-     * @param keys
-     * @param unique
-     */
-    public void dbIndexGeo(String collection, String[] keys, boolean unique) {
-        IndexOptions indexOptions = new IndexOptions().unique(unique);
-        dbGetCollection(collection).createIndex(Indexes.geo2dsphere(keys), indexOptions);
+    public void dbDelDoc(String collection, Object[] key) {
+        dbGetCollection(collection).deleteOne(dbNewDoc(key));
     }
 
     private void removeEmpty(Node node) {

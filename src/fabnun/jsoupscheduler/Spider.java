@@ -475,7 +475,7 @@ public class Spider extends JDialog {
     private void run(String url, String selector, boolean json) throws IOException, MalformedURLException, URISyntaxException {
         Node doc;
         if (json) {
-            JSONObject obj = tools.domLoadJSON(url, 15000);
+            JSONObject obj = tools.domLoadJSON(url);
             this.jTree1.setModel(new DefaultTreeModel(JsonTree(obj, json)));
         } else {
             if (!selector.trim().isEmpty()) {
