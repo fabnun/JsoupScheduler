@@ -157,7 +157,10 @@ public class Scheduler {
                         for (long l : updateTimes) {
                             sb.append(" ").append(sdf.format(new Date(l + day)));
                         }
-                        System.out.println(command + " [" + sb.toString().trim() + "]");
+                        if (sb.length() > 80) {
+                            sb = new StringBuilder(sb.toString().substring(0, 80));
+                        }
+                        Ui.tools.log("SCHEDULE [" + sb.toString().trim() + "]", command);
                     }
 
                     if (!updateTimes.isEmpty()) {
@@ -170,7 +173,10 @@ public class Scheduler {
                             for (long l : updateTimes) {
                                 sb.append(" ").append(sdf.format(new Date(l + day)));
                             }
-                            System.out.println(command + " [" + sb.toString().trim() + "]");
+                            if (sb.length() > 80) {
+                                sb = new StringBuilder(sb.toString().substring(0, 80));
+                            }
+                            //Ui.tools.log("SCHEDULE [" + sb.toString().trim() + "]", command);
                             String code = map.get(command);
                             boolean found = false;
                             synchronized (Ui.listModel) {

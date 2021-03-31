@@ -41,8 +41,8 @@ public class BeanShellProcess {
                 bsh.run();
                 removeToList(this);
             } catch (Exception e) {
-                System.err.println("SCRIPT " + title+" ERROR");
-                System.err.println(e.getLocalizedMessage());
+                Ui.tools.err("SCRIPT " + title+" ERROR");
+                Ui.tools.err(e.getLocalizedMessage());
             }
         });
         thread.setName(title);

@@ -398,7 +398,7 @@ public final class Tools {
     }
     
     public void err(char msg, String context){
-            System.err.println(msg);
+            System.err.print(msg);
     }
     
     public void err(char msg){

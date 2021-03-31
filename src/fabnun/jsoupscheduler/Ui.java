@@ -111,7 +111,7 @@ public class Ui extends javax.swing.JFrame {
                             randomAccessFile.close();
                             file.delete();
                         } catch (Exception e) {
-                            System.err.println("Unable to remove lock file: " + lockFile);
+                            Ui.tools.err("Unable to remove lock file: " + lockFile);
                             e.printStackTrace();
                         }
                     }
@@ -119,7 +119,7 @@ public class Ui extends javax.swing.JFrame {
                 return true;
             }
         } catch (Exception e) {
-            System.err.println("Unable to create and/or lock file: " + lockFile);
+            Ui.tools.err("Unable to create and/or lock file: " + lockFile);
             e.printStackTrace();
         }
         return false;
@@ -958,7 +958,7 @@ public class Ui extends javax.swing.JFrame {
 
             IntelliJTheme.install(new FileInputStream("theme.json"));
         } catch (Exception ex) {
-            System.err.println("Failed to initialize LaF");
+            Ui.tools.err("Failed to initialize LaF");
         }
 
         //</editor-fold>
