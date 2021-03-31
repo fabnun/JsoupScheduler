@@ -31,6 +31,7 @@ public class BeanShellProcess {
             try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); PrintStream pst = new PrintStream(baos)) {
                 StringReader reader = new StringReader(code);
                 Interpreter bsh = new Interpreter(reader, pst, System.err, false);
+                bsh.set("name", title);
                 bsh.set("input", input);
                 bsh.set("output", map);
                 bsh.set("tools", Ui.tools);

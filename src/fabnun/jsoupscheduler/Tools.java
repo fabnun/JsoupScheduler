@@ -25,11 +25,12 @@ import com.mongodb.client.result.UpdateResult;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.bson.BsonDocument;
 import org.bson.Document;
-import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.conversions.Bson;
 import org.json.JSONArray;
 import org.jsoup.nodes.Element;
@@ -477,17 +478,17 @@ public final class Tools {
         Document document = dbNewDoc(values);
         dbPutDoc(collection, document);
     }
-    
+
     public boolean dbUpdate(String collectionName, Object[] key, Object[] values) {
         MongoCollection<Document> collection = dbGetCollection(collectionName);
         try {
-            
+
             Bson filter = null;
-            for(int i=0;i<key.length;i=i+2){
-                Bson thisFilter=Filters.eq((String)key[i], key[i+1]);
-                filter=filter==null?thisFilter:Filters.and(filter,thisFilter);
+            for (int i = 0; i < key.length; i = i + 2) {
+                Bson thisFilter = Filters.eq((String) key[i], key[i + 1]);
+                filter = filter == null ? thisFilter : Filters.and(filter, thisFilter);
             }
-                    
+
             UpdateResult result = collection.updateOne(filter, new Document("$set", dbNewDoc(values)));
             return result.getMatchedCount() == 1;
         } catch (Exception e) {
