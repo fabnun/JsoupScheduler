@@ -46,7 +46,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import javax.swing.text.Document;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
@@ -78,12 +77,7 @@ public class Ui extends javax.swing.JFrame {
             System.setOut(new PrintStream(new FileOutputStream("out.log", true)));
             System.setErr(new PrintStream(new FileOutputStream("err.log", true)));
             initComponents();
-            jTabbedPane1.setUI(new BasicTabbedPaneUI() {
-                @Override
-                protected int calculateTabHeight(int tabPlacement, int tabIndex, int fontHeight) {
-                    return 45; // manipulate this number however you please.
-                }
-            });
+
             loadGui();
 
             listModel = new DefaultListModel<>();
@@ -161,6 +155,7 @@ public class Ui extends javax.swing.JFrame {
                 setBounds((Rectangle) result[0]);
                 map = (TreeMap<String, String>) result[1];
                 jTabbedPane1.removeAll();
+                addText("_Read_", map.get("_Read_"));
                 addText("_Scheduler_", map.get("_Scheduler_"));
                 addText("_Input_", map.get("_Input_"));
                 for (String nam : map.keySet()) {
@@ -168,7 +163,6 @@ public class Ui extends javax.swing.JFrame {
                         addText(nam, map.get(nam));
                     }
                 }
-
                 JScrollPane c = (JScrollPane) jTabbedPane1.getComponentAt((int) result[2]);
                 JViewport viewport = c.getViewport();
                 RSyntaxTextArea textArea = (RSyntaxTextArea) viewport.getComponents()[0];
@@ -301,6 +295,7 @@ public class Ui extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -444,7 +439,7 @@ public class Ui extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jSplitPane1.setDividerLocation(800);
+        jSplitPane1.setDividerLocation(900);
 
         jButton9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton9.setForeground(java.awt.SystemColor.activeCaptionText);
@@ -526,17 +521,15 @@ public class Ui extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -547,13 +540,12 @@ public class Ui extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10)
                     .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -562,7 +554,21 @@ public class Ui extends javax.swing.JFrame {
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        jSplitPane1.setLeftComponent(jTabbedPane1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setLeftComponent(jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -583,7 +589,7 @@ public class Ui extends javax.swing.JFrame {
                         .addComponent(jToggleButton1)
                         .addContainerGap())
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1145, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 983, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -613,17 +619,6 @@ public class Ui extends javax.swing.JFrame {
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
         saveGui();
     }//GEN-LAST:event_formComponentResized
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String tab = JOptionPane.showInputDialog(this, "Tab Name?");
-        if (tab != null) {
-            if (map.containsKey(tab)) {
-                JOptionPane.showMessageDialog(this, "this tab name exist!");
-            } else {
-                addText(tab);
-            }
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int idx = jTabbedPane1.getSelectedIndex();
@@ -791,6 +786,17 @@ public class Ui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String tab = JOptionPane.showInputDialog(this, "Tab Name?");
+        if (tab != null) {
+            if (map.containsKey(tab)) {
+                JOptionPane.showMessageDialog(this, "this tab name exist!");
+            } else {
+                addText(tab);
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void run() {
         String title = jTabbedPane1.getTitleAt(jTabbedPane1.getSelectedIndex());
         new BeanShellProcess(title, map.get(title), Ui.input);
@@ -896,7 +902,10 @@ public class Ui extends javax.swing.JFrame {
 
         Font font = textArea.getFont();
         textArea.setFont(new Font(font.getFontName(), font.getStyle(), 16));
-        textArea.setSyntaxEditingStyle(name.equals("_Input_") ? SyntaxConstants.SYNTAX_STYLE_PROPERTIES_FILE : name.equals("_Scheduler_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS : SyntaxConstants.SYNTAX_STYLE_JAVA);
+        textArea.setSyntaxEditingStyle(
+                name.equals("_Input_") ? SyntaxConstants.SYNTAX_STYLE_PROPERTIES_FILE
+                        : name.equals("_Scheduler_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS
+                                : name.equals("_Read_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS : SyntaxConstants.SYNTAX_STYLE_JAVA);
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(textArea);
         textArea.setText(text);
@@ -984,6 +993,7 @@ public class Ui extends javax.swing.JFrame {
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
