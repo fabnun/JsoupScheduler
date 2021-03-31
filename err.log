@@ -572,3 +572,1519 @@ mar 31, 2021 3:58:28 AM com.mongodb.diagnostics.logging.JULLogger log
 INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=594271}
 mar 31, 2021 3:58:28 AM com.mongodb.diagnostics.logging.JULLogger log
 INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:74}] to localhost:27017
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:75}] to localhost:27017
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=599342}
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:76}] to localhost:27017
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:77}] to localhost:27017
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=526979}
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:78}] to localhost:27017
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:79}] to localhost:27017
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=576462}
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:80}] to localhost:27017
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:81}] to localhost:27017
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=565338}
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:82}] to localhost:27017
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+222
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:83}] to localhost:27017
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=610099}
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:84}] to localhost:27017
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+mar 31, 2021 4:11:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:85}] to localhost:27017
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=559917}
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:86}] to localhost:27017
+222
+222
+222
+222
+222
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:87}] to localhost:27017
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=494924}
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:88}] to localhost:27017
+222
+222
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:89}] to localhost:27017
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=451705}
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:90}] to localhost:27017
+222
+222
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:91}] to localhost:27017
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=643607}
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:92}] to localhost:27017
+21/03/31 04:27:11,ºTESTº,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:93}] to localhost:27017
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=524131}
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:94}] to localhost:27017
+21/03/31 04:31:10,,>> INICIANDO BNE PAGES
+21/03/31 04:31:52,,>> INICIANDO BNE PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+21/03/31 04:37:32,,>> INICIANDO BNE PAGES
+mar 31, 2021 4:37:32 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:3, serverValue:95}] to localhost:27017
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:39:13,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES
+21/03/31 04:40:08,computrabajo.pages,
+>> TERMINANDO COMPUTRABAJO PAGES (0 MIN)
+21/03/31 04:43:16,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:44:21,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:45:30,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:45:45,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:45:53,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:06,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:08,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:22,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:31,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:39,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:46,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:49,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:54,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:47:37,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+mar 31, 2021 4:49:14 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:96}] to localhost:27017
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=510263}
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:97}] to localhost:27017
+21/03/31 04:49:19,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+21/03/31 04:49:23,empleos-publicos.pages,
+>> TERMINANDO BNE-PUBLICO PAGES (0 MIN)
+21/03/31 04:49:50,,>> INICIANDO BNE PAGES
+21/03/31 04:49:58,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES
+21/03/31 04:50:18,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+mar 31, 2021 4:50:20 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:3, serverValue:98}] to localhost:27017
+21/03/31 04:50:22,empleos-publicos.pages,
+>> TERMINANDO BNE-PUBLICO PAGES (0 MIN)
+21/03/31 04:50:39,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:43,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:44,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:47,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:48,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:48,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:49,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:54,computrabajo.pages,
+>> TERMINANDO COMPUTRABAJO PAGES (0 MIN)
+21/03/31 04:51:04,ºTESTº,222
+21/03/31 04:54:07,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES

@@ -19,17 +19,20 @@ import java.util.Objects;
  */
 public class BeanShellProcess {
 
+    public static final String preCode="log(s){tools.log(s,name);}\nerr(s){tools.err(s,name);}\n";
+    
     public final Thread thread;
     String title;
 
     @SuppressWarnings({"CallToPrintStackTrace", "CallToThreadStartDuringObjectConstruction", "LeakingThisInConstructor"})
     public BeanShellProcess(String title, String code, Map input) {
+        final String finalCode=preCode+code;
         this.title = title;
         thread = new Thread(() -> {
             Map map = new HashMap<>();
 
             try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); PrintStream pst = new PrintStream(baos)) {
-                StringReader reader = new StringReader(code);
+                StringReader reader = new StringReader(finalCode);
                 Interpreter bsh = new Interpreter(reader, pst, System.err, false);
                 bsh.set("name", title);
                 bsh.set("input", input);
@@ -38,10 +41,8 @@ public class BeanShellProcess {
                 bsh.run();
                 removeToList(this);
             } catch (Exception e) {
-                Ui.tools.err("<><><><><><><><><><><><><><><><><><><><><><>");
-                Ui.tools.err("ERROR AL EJECUTAR PROCESO " + title);
-                Ui.tools.err(e.getLocalizedMessage());
-                Ui.tools.err("<><><><><><><><><><><><><><><><><><><><><><>");
+                System.err.println("SCRIPT " + title+" ERROR");
+                System.err.println(e.getLocalizedMessage());
             }
         });
         thread.setName(title);

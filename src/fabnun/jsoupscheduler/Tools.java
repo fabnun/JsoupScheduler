@@ -22,6 +22,8 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.IndexOptions;
 import com.mongodb.client.model.Indexes;
 import com.mongodb.client.result.UpdateResult;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -97,36 +99,9 @@ public final class Tools {
                             break;
                     }
                 } catch (Exception e) {
-                    err("Error al definir un campo unico: " + s, e);
+                    err("ERROR MONGODB INDEX " + s);
+                    err(e.getLocalizedMessage());
                 }
-            }
-        }
-    }
-
-    public void log(Object s) {
-        log(new Object[]{s});
-    }
-
-    public void err(Object s) {
-        err(new Object[]{s});
-    }
-
-    public void log(Object... ss) {
-        for (Object s : ss) {
-            if (s instanceof Character) {
-                System.out.print(s);
-            } else {
-                System.out.println(s);
-            }
-        }
-    }
-
-    public void err(Object... ss) {
-        for (Object s : ss) {
-            if (s instanceof Character) {
-                System.err.print(s);
-            } else {
-                System.err.println(s);
             }
         }
     }
@@ -196,9 +171,6 @@ public final class Tools {
         while (m.find()) {
             String g = m.group();
             //String v =localMap.get(g.replaceAll("\\s+", " ")).trim();
-            if (g.equals("valparaiso") || g.equals("de valparaiso")) {
-                System.out.println("1");
-            }
             HashSet<String> remove = new HashSet<>();
             for (String k : map) {
                 if (g.contains(k)) {
@@ -415,6 +387,41 @@ public final class Tools {
         } catch (InterruptedException e) {
         }
     }
+    
+    private final SimpleDateFormat sdf= new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+    public void err(String msg, String context){
+            System.err.println(sdf.format(new Date())+","+context+","+msg);
+    }
+    
+    public void err(String msg){
+        err(msg, "");
+    }
+    
+    public void err(char msg, String context){
+            System.err.println(msg);
+    }
+    
+    public void err(char msg){
+        err(msg, "");
+    }
+    
+    
+    public void log(String msg, String context){
+            System.out.println(sdf.format(new Date())+","+context+","+msg);
+    }
+    
+    public void log(String msg){
+        err(msg, "");
+    }
+    
+    public void log(char msg, String context){
+            System.out.print(msg);
+    }
+    
+    public void log(char msg){
+        log(msg, "");
+    }
+    
 
     //-----------------------------------------------------
     //			               funciones mongo
@@ -492,7 +499,7 @@ public final class Tools {
             UpdateResult result = collection.updateOne(filter, new Document("$set", dbNewDoc(values)));
             return result.getMatchedCount() == 1;
         } catch (Exception e) {
-            err(e);
+            err(e.getLocalizedMessage());
             return false;
         }
 
@@ -505,7 +512,7 @@ public final class Tools {
             UpdateResult result = collection.updateOne(filter, new Document("$set", document));
             return result.getMatchedCount() == 1;
         } catch (Exception e) {
-            err(e);
+            err(e.getLocalizedMessage());
             return false;
         }
 
