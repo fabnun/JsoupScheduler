@@ -27,9 +27,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.bson.Document;
@@ -205,6 +202,10 @@ public final class Tools {
         }
         String r = map.toString();
         return r.substring(1, r.length() - 1);
+    }
+
+    public String textEncodeHtml(String source) {
+        return encode(source, htmlEncodeChars);
     }
 
     //-----------------------------------------------------
@@ -387,41 +388,40 @@ public final class Tools {
         } catch (InterruptedException e) {
         }
     }
-    
-    private final SimpleDateFormat sdf= new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-    public void err(String msg, String context){
-            System.err.println(sdf.format(new Date())+","+context+","+msg);
-    }
-    
-    public void err(String msg){
+
+    private final SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+
+    public void err(Object msg) {
         err(msg, "");
     }
-    
-    public void err(char msg, String context){
-            System.err.print(msg);
+
+    public void err(Object msg, String context) {
+        System.err.println(sdf.format(new Date()) + "," + context + "," + msg);
     }
-    
-    public void err(char msg){
+
+    public void err(char msg, String context) {
+        System.err.print(msg);
+    }
+
+    public void err(char msg) {
         err(msg, "");
     }
-    
-    
-    public void log(String msg, String context){
-            System.out.println(sdf.format(new Date())+","+context+","+msg);
-    }
-    
-    public void log(String msg){
-        err(msg, "");
-    }
-    
-    public void log(char msg, String context){
-            System.out.print(msg);
-    }
-    
-    public void log(char msg){
+
+    public void log(Object msg) {
         log(msg, "");
     }
-    
+
+    public void log(Object msg, String context) {
+        System.out.println(sdf.format(new Date()) + "," + context + "," + msg);
+    }
+
+    public void log(char msg, String context) {
+        System.out.print(msg);
+    }
+
+    public void log(char msg) {
+        log(msg, "");
+    }
 
     //-----------------------------------------------------
     //			               funciones mongo
@@ -473,19 +473,41 @@ public final class Tools {
         DB.getCollection(collection).createIndex(Indexes.geo2dsphere(keys), indexOptions);
     }
 
+    /**
+     *
+     * @param collection
+     * @return
+     */
     public MongoCollection dbGetCollection(String collection) {
         return DB.getCollection(collection);
     }
 
+    /**
+     *
+     * @param collection
+     * @param document
+     */
     public void dbPutDoc(String collection, Document document) {
         dbGetCollection(collection).insertOne(document);
     }
 
+    /**
+     *
+     * @param collection
+     * @param values
+     */
     public void dbPutDoc(String collection, Object[] values) {
         Document document = dbNewDoc(values);
         dbPutDoc(collection, document);
     }
 
+    /**
+     *
+     * @param collectionName
+     * @param key
+     * @param values
+     * @return
+     */
     public boolean dbUpdate(String collectionName, Object[] key, Object[] values) {
         MongoCollection<Document> collection = dbGetCollection(collectionName);
         try {
@@ -505,6 +527,14 @@ public final class Tools {
 
     }
 
+    /**
+     *
+     * @param collectionName
+     * @param id
+     * @param idVal
+     * @param document
+     * @return
+     */
     public boolean dbUpdate(String collectionName, String id, Object idVal, Document document) {
         MongoCollection<Document> collection = dbGetCollection(collectionName);
         try {
@@ -518,6 +548,11 @@ public final class Tools {
 
     }
 
+    /**
+     *
+     * @param values
+     * @return
+     */
     public Document dbNewDoc(Object[] values) {
         Document document = new Document();
         if (values != null) {
@@ -528,32 +563,137 @@ public final class Tools {
         return document;
     }
 
-    public FindIterable dbGetDoc(String collection) {
-        return dbGetCollection(collection).find();
-    }
-
+    ////////////////////////// dbExistDoc ///////////////////////////
+    /**
+     *
+     * @param collection
+     * @param docKey
+     * @return
+     */
     public boolean dbExistDoc(String collection, Document docKey) {
         return dbGetCollection(collection).find(docKey).iterator().hasNext();
     }
 
+    /**
+     *
+     * @param collection
+     * @param key
+     * @return
+     */
     public boolean dbExistDoc(String collection, Object[] key) {
         return dbGetDoc(collection, dbNewDoc(key)).iterator().hasNext();
     }
 
+    ////////////////////////// dbGetDoc ///////////////////////////
+    /**
+     *
+     * @param collection
+     * @return
+     */
+    public FindIterable dbGetDoc(String collection) {
+        return dbGetCollection(collection).find();
+    }
+
+    /**
+     *
+     * @param collection
+     * @param docKey
+     * @return
+     */
     public FindIterable dbGetDoc(String collection, Document docKey) {
         return dbGetCollection(collection).find(docKey);
     }
 
+    /**
+     *
+     * @param collection
+     * @param key
+     * @return
+     */
     public FindIterable dbGetDoc(String collection, Object[] key) {
         return dbGetDoc(collection, dbNewDoc(key));
     }
 
+    /**
+     *
+     * @param collection
+     * @param docKey
+     * @param filter
+     * @return
+     */
+    public FindIterable dbGetDoc(String collection, Document docKey, Document filter) {
+        return dbGetCollection(collection).find(docKey).projection(filter);
+    }
+
+    /**
+     *
+     * @param collection
+     * @param key
+     * @param filter
+     * @return
+     */
+    public FindIterable dbGetDoc(String collection, Object[] key, Object[] filter) {
+        return dbGetDoc(collection, dbNewDoc(key), dbNewDoc(filter));
+    }
+
+    ////////////////////////// dbDelDoc ///////////////////////////
     public void dbDelDoc(String collection, Document docKey) {
         dbGetCollection(collection).deleteOne(docKey);
     }
 
+    /**
+     *
+     * @param collection
+     * @param key
+     */
     public void dbDelDoc(String collection, Object[] key) {
         dbGetCollection(collection).deleteOne(dbNewDoc(key));
+    }
+
+    ////////////////////////// dbDelDoc ///////////////////////////
+    public void toTableModel(FindIterable iterable, String name, String[] buttons, String[] cols) throws ClassNotFoundException {
+        Ui.instance.showTable(iterable, name, buttons, cols);
+    }
+
+    private String encode(String source, HashMap<Character, String> encodingTable) {
+        if (null == source) {
+            return null;
+        }
+
+        if (null == encodingTable) {
+            return source;
+        }
+
+        StringBuffer encoded_string = null;
+        char[] string_to_encode_array = source.toCharArray();
+        int last_match = -1;
+        int difference = 0;
+
+        for (int i = 0; i < string_to_encode_array.length; i++) {
+            char char_to_encode = string_to_encode_array[i];
+
+            if (encodingTable.containsKey(char_to_encode)) {
+                if (null == encoded_string) {
+                    encoded_string = new StringBuffer(source.length());
+                }
+                difference = i - (last_match + 1);
+                if (difference > 0) {
+                    encoded_string.append(string_to_encode_array, last_match + 1, difference);
+                }
+                encoded_string.append(encodingTable.get(char_to_encode));
+                last_match = i;
+            }
+        }
+
+        if (null == encoded_string) {
+            return source;
+        } else {
+            difference = string_to_encode_array.length - (last_match + 1);
+            if (difference > 0) {
+                encoded_string.append(string_to_encode_array, last_match + 1, difference);
+            }
+            return encoded_string.toString();
+        }
     }
 
     private void removeEmpty(Node node) {
@@ -844,51 +984,6 @@ public final class Tools {
         htmlEncodeChars.put('\u2663', "&clubs;");
         htmlEncodeChars.put('\u2665', "&hearts;");
         htmlEncodeChars.put('\u2666', "&diams;");
-    }
-
-    public String textEncodeHtml(String source) {
-        return encode(source, htmlEncodeChars);
-    }
-
-    private String encode(String source, HashMap<Character, String> encodingTable) {
-        if (null == source) {
-            return null;
-        }
-
-        if (null == encodingTable) {
-            return source;
-        }
-
-        StringBuffer encoded_string = null;
-        char[] string_to_encode_array = source.toCharArray();
-        int last_match = -1;
-        int difference = 0;
-
-        for (int i = 0; i < string_to_encode_array.length; i++) {
-            char char_to_encode = string_to_encode_array[i];
-
-            if (encodingTable.containsKey(char_to_encode)) {
-                if (null == encoded_string) {
-                    encoded_string = new StringBuffer(source.length());
-                }
-                difference = i - (last_match + 1);
-                if (difference > 0) {
-                    encoded_string.append(string_to_encode_array, last_match + 1, difference);
-                }
-                encoded_string.append(encodingTable.get(char_to_encode));
-                last_match = i;
-            }
-        }
-
-        if (null == encoded_string) {
-            return source;
-        } else {
-            difference = string_to_encode_array.length - (last_match + 1);
-            if (difference > 0) {
-                encoded_string.append(string_to_encode_array, last_match + 1, difference);
-            }
-            return encoded_string.toString();
-        }
     }
 
 }

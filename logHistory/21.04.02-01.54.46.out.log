@@ -1,0 +1,94 @@
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+21/04/02 01:49:06,empleos-publicos.pages,SCHEDULE [10:37:49 19:35:15]
+21/04/02 01:49:06,compare,SCHEDULE [23:39:00 23:39:03 23:39:06 23:39:09 23:39:12 23:39:15 23:39:18 23:39:21 23:39:2]
+21/04/02 01:49:06,computrabajo.pages,SCHEDULE [10:32:56 19:16:40]
+21/04/02 01:49:06,bne.pages,SCHEDULE [10:08:40 19:42:46]
+21/04/02 01:49:06,bne.read,SCHEDULE [01:49:08 01:49:10 01:49:12 01:49:14 01:49:15 01:49:18 01:49:19 01:49:22 01:49:2]
+21/04/02 01:49:06,computrabajo.read,SCHEDULE [01:49:07 01:49:10 01:49:12 01:49:13 01:49:15 01:49:17 01:49:20 01:49:22 01:49:2]
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+saving...
+saved...Ok
+21/04/02 01:52:15,computrabajo.pages,SCHEDULE [10:27:57 19:35:38]
+21/04/02 01:52:15,bne.pages,SCHEDULE [10:33:08 19:01:49]
+21/04/02 01:52:15,empleos-publicos.pages,SCHEDULE [10:28:33 19:04:05]
+21/04/02 01:52:15,compare,SCHEDULE [01:52:18 01:52:21 01:52:24 01:52:27 01:52:30 01:52:33 01:52:36 01:52:39 01:52:4]
+21/04/02 01:52:15,computrabajo.read,SCHEDULE [01:52:16 01:52:18 01:52:20 01:52:22 01:52:24 01:52:26 01:52:28 01:52:30 01:52:3]
+21/04/02 01:52:15,bne.read,SCHEDULE [01:52:16 01:52:18 01:52:20 01:52:22 01:52:24 01:52:26 01:52:28 01:52:30 01:52:3]
+21/04/02 01:52:18,compare,APLICA -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405 words:tecnico social  local:Metropolitana, Puente Alto
+21/04/02 01:52:21,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-028502 : 0.36914816818408863
+21/04/02 01:52:22,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-026669 : 0.41435503812253655
+21/04/02 01:52:25,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-021491 : 0.4104335356204164
+21/04/02 01:52:29,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-026140 : 0.30041874741593577
+21/04/02 01:52:32,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-025826 : 0.4255839899112274
+21/04/02 01:52:35,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-025831 : 0.43987480254161043
+21/04/02 01:52:37,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-030439 : 0.26787768317393723
+21/04/02 01:52:40,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-028836 : 0.22808026403923182
+21/04/02 01:52:42,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-029109 : 0.22007330038102052
+21/04/02 01:52:45,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-025145 : 0.33131688309538687
+21/04/02 01:52:50,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajo-social-la-granja-en-santiago-la-granja-846E06AC17A94C4561373E686DCF3405 : 0.37917438799017744
+21/04/02 01:52:52,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:http://junji.myfront.cl/oferta-de-empleo/2094/reemplazo-pre-y-post-natal-asesora-de-las-unidades-educativas-mencion-trabajo-social-region-de-aysen/ : 0.15459881407191087
+21/04/02 01:52:53,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:http://junji.myfront.cl/oferta-de-empleo/2285/reemplazo-asesora-de-las-unidades-educativas-mencion-trabajo-social-region-de-la-araucania/ : 0.2430287475718816
+21/04/02 01:52:55,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:http://junji.myfront.cl/oferta-de-empleo/2340/reemplazo-pre-y-post-natal-asesora-de-las-unidades-educativas-mencion-trabajo-social-region-de-aysen-2/ : 0.15369152576763664
+21/04/02 01:52:59,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-periodista-o-trabajador-social-penaflor-en-penaflor-1B208030222A133D61373E686DCF3405 : 0.4111090810989294
+21/04/02 01:53:06,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-asistentes-trabajadores-sociales-penalolen-institucion-desarrollo-social-en-santiago-penalolen-71DAF2494686846061373E686DCF3405 : 0.3996597807908931
+21/04/02 01:53:14,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-asistentes-trabajadores-sociales-penalolen-institucion-desarrollo-social-en-santiago-penalolen-50379E3DA26BF85E61373E686DCF3405 : 0.3996597807908931
+21/04/02 01:53:21,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-asistentes-trabajadores-sociales-penalolen-institucion-desarrollo-social-en-santiago-penalolen-3D67CBD3097D19AA61373E686DCF3405 : 0.3996597807908931
+21/04/02 01:53:23,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-023302 : 0.21049189327045523
+21/04/02 01:53:26,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-013708 : 0.35337816415216666
+21/04/02 01:53:34,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-asistentes-trabajadores-sociales-penalolen-institucion-desarrollo-social-en-santiago-penalolen-EC014DDD6777D40F61373E686DCF3405 : 0.3996597807908931
+21/04/02 01:53:37,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-013705 : 0.3521714273005929
+21/04/02 01:53:42,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-licencia-medica-san-antonio-en-san-antonio-E83F234F5EF44D0E61373E686DCF3405 : 0.2742993088655428
+21/04/02 01:53:45,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.bne.cl/oferta/2021-013712 : 0.3524191478137034
+21/04/02 01:53:50,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-licencia-medica-puerto-montt-en-puerto-montt-E4DDF4C0925B887B61373E686DCF3405 : 0.3386972987389362
+21/04/02 01:53:55,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-colina-en-colina-54D0E311809A505C61373E686DCF3405 : 0.44983508659761806
+21/04/02 01:53:59,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-pudahuel-en-santiago-pudahuel-6785053C59F42EEE61373E686DCF3405 : 0.44283772383248954
+21/04/02 01:54:03,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-maipu-en-colina-AC0CD16FCFBE8C9961373E686DCF3405 : 0.41799974613298757
+21/04/02 01:54:08,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-la-pintana-en-colina-AB42B16700B0859861373E686DCF3405 : 0.4547102080518227
+21/04/02 01:54:12,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-colina-en-colina-7E005CDE28D2698F61373E686DCF3405 : 0.44983508659761806
+21/04/02 01:54:17,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-quinta-normal-225-hrs-en-santiago-quinta-normal-B8F13E178188EA6761373E686DCF3405 : 0.42106612662609344
+21/04/02 01:54:22,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-penalolen-en-santiago-penalolen-3C120CFF7609082361373E686DCF3405 : 0.46988390183714424
+saving...
+saved...Ok
+saving...
+saved...Ok
+21/04/02 01:54:26,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-penalolen-en-santiago-penalolen-D4B270D5D075FAD961373E686DCF3405 : 0.46988390183714424
+saving...
+saved...Ok
+21/04/02 01:54:32,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-iquique-en-iquique-BFA4A0217244C80461373E686DCF3405 : 0.2844044053892061
+21/04/02 01:54:36,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-proyecto-chillan-en-chillan-7CB5883BC96AAB3461373E686DCF3405 : 0.27599328206597706
+21/04/02 01:54:42,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-trabajador-social-reemplazo-tome-en-canete-4182119FA5AF3EEA61373E686DCF3405 : 0.22614920547140774
+21/04/02 01:54:46,compare,SIMIL -> https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-tecnico-social-para-ppf-puente-alto-en-puente-alto-DB91BF4DD2DAA07961373E686DCF3405:https://www.computrabajo.cl/ofertas-de-trabajo/oferta-de-trabajo-de-psicologotrabajador-social-en-copiapo-B3ED508BFF151CA761373E686DCF3405 : 0.2768902190901608

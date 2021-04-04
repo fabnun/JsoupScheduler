@@ -173,20 +173,23 @@ public class Scheduler {
                             for (long l : updateTimes) {
                                 sb.append(" ").append(sdf.format(new Date(l + day)));
                             }
-                            if (sb.length() > 80) {
-                                sb = new StringBuilder(sb.toString().substring(0, 80));
-                            }
-                            //Ui.tools.log("SCHEDULE [" + sb.toString().trim() + "]", command);
+
                             String code = map.get(command);
                             boolean found = false;
                             synchronized (Ui.listModel) {
-                                int size = Ui.listModel.getSize();
-                                for (int i = 0; i < size; i++) {
-                                    if (Ui.listModel.get(i).title.equals(command)) {
-                                        found = true;
-                                        break;
+
+                                try {
+                                    int size = Ui.listModel.getSize();
+                                    for (int i = 0; i < size; i++) {
+                                        if (Ui.listModel.get(i).title.equals(command)) {
+                                            found = true;
+                                            break;
+                                        }
                                     }
+                                } catch (Exception e) {
+                                    System.err.println(">>>>>>> scheduler check " + e.getLocalizedMessage());
                                 }
+
                             }
                             if (!found) {
                                 new BeanShellProcess(command, code, Ui.input);

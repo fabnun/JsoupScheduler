@@ -1,0 +1,10 @@
+mar 31, 2021 3:28:46 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:28:46 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:28:46 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:136}] to localhost:27017
+mar 31, 2021 3:28:46 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=435847}
+mar 31, 2021 3:28:46 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:137}] to localhost:27017

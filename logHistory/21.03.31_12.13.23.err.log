@@ -1,0 +1,2474 @@
+mar 31, 2021 12:25:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 12:25:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 12:25:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:7}] to localhost:27017
+mar 31, 2021 12:25:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=858162}
+mar 31, 2021 12:25:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:8}] to localhost:27017
+mar 31, 2021 1:08:02 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:08:02 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:08:02 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:9}] to localhost:27017
+mar 31, 2021 1:08:02 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=1175037}
+mar 31, 2021 1:08:02 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:10}] to localhost:27017
+mar 31, 2021 1:11:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:11:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:11:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:11}] to localhost:27017
+mar 31, 2021 1:11:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=474842}
+mar 31, 2021 1:11:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:12}] to localhost:27017
+mar 31, 2021 1:16:58 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:16:58 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:16:58 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:13}] to localhost:27017
+mar 31, 2021 1:16:58 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=451409}
+mar 31, 2021 1:16:58 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:14}] to localhost:27017
+mar 31, 2021 1:18:02 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:18:02 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:18:03 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:15}] to localhost:27017
+mar 31, 2021 1:18:03 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=481804}
+mar 31, 2021 1:18:03 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:16}] to localhost:27017
+mar 31, 2021 1:19:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:19:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:19:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:17}] to localhost:27017
+mar 31, 2021 1:19:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=621606}
+mar 31, 2021 1:19:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:18}] to localhost:27017
+mar 31, 2021 1:27:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:27:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:27:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:19}] to localhost:27017
+mar 31, 2021 1:27:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=479789}
+mar 31, 2021 1:27:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:20}] to localhost:27017
+mar 31, 2021 1:31:55 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:31:56 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:31:56 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:21}] to localhost:27017
+mar 31, 2021 1:31:56 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=600979}
+mar 31, 2021 1:31:56 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:22}] to localhost:27017
+mar 31, 2021 1:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:23}] to localhost:27017
+mar 31, 2021 1:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=498727}
+mar 31, 2021 1:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:24}] to localhost:27017
+mar 31, 2021 1:50:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:50:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:50:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:25}] to localhost:27017
+mar 31, 2021 1:50:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=602554}
+mar 31, 2021 1:50:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:26}] to localhost:27017
+mar 31, 2021 1:50:48 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:50:48 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:50:48 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:27}] to localhost:27017
+mar 31, 2021 1:50:48 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=698482}
+mar 31, 2021 1:50:48 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:28}] to localhost:27017
+mar 31, 2021 1:53:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 1:53:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 1:53:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:29}] to localhost:27017
+mar 31, 2021 1:53:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=554714}
+mar 31, 2021 1:53:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:30}] to localhost:27017
+mar 31, 2021 2:05:26 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:05:26 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:05:26 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:31}] to localhost:27017
+mar 31, 2021 2:05:26 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=574973}
+mar 31, 2021 2:05:26 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:32}] to localhost:27017
+mar 31, 2021 2:07:32 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:07:32 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:07:32 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:33}] to localhost:27017
+mar 31, 2021 2:07:32 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=614761}
+mar 31, 2021 2:07:32 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:34}] to localhost:27017
+mar 31, 2021 2:15:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:15:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:15:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:35}] to localhost:27017
+mar 31, 2021 2:15:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=746399}
+mar 31, 2021 2:15:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:36}] to localhost:27017
+>> INICIANDO BNE PAGES
+>> INICIANDO EMPLEOS-PUBLICO PAGES
+
+>> TERMINANDO BNE-PUBLICO PAGES (0 MIN)
+>> INICIANDO COMPUTRABAJO PAGES
+
+>> TERMINANDO COMPUTRABAJO PAGES (0 MIN)
+mar 31, 2021 2:20:57 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:20:57 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:20:57 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:37}] to localhost:27017
+mar 31, 2021 2:20:57 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=1188281}
+mar 31, 2021 2:20:57 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:38}] to localhost:27017
+mar 31, 2021 2:34:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:34:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:34:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:39}] to localhost:27017
+mar 31, 2021 2:34:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=486939}
+mar 31, 2021 2:34:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:40}] to localhost:27017
+mar 31, 2021 2:47:51 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:47:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:47:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:41}] to localhost:27017
+mar 31, 2021 2:47:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=589820}
+mar 31, 2021 2:47:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:42}] to localhost:27017
+mar 31, 2021 2:49:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:49:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:49:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:43}] to localhost:27017
+mar 31, 2021 2:49:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=477286}
+mar 31, 2021 2:49:13 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:44}] to localhost:27017
+mar 31, 2021 2:50:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:50:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:50:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:45}] to localhost:27017
+mar 31, 2021 2:50:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=530968}
+mar 31, 2021 2:50:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:46}] to localhost:27017
+mar 31, 2021 2:52:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:52:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:52:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:47}] to localhost:27017
+mar 31, 2021 2:52:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=518609}
+mar 31, 2021 2:52:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:48}] to localhost:27017
+mar 31, 2021 2:52:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:52:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:52:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:49}] to localhost:27017
+mar 31, 2021 2:52:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=494333}
+mar 31, 2021 2:52:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:50}] to localhost:27017
+mar 31, 2021 2:53:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 2:53:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 2:53:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:51}] to localhost:27017
+mar 31, 2021 2:53:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=517581}
+mar 31, 2021 2:53:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:52}] to localhost:27017
+// Error: EvalError: Class or variable not found: Level.INFO
+mar 31, 2021 2:55:49 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:03:44 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:03:44 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:03:44 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:53}] to localhost:27017
+mar 31, 2021 3:03:44 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=622147}
+mar 31, 2021 3:03:44 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:54}] to localhost:27017
+mar 31, 2021 3:04:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:04:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:04:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:55}] to localhost:27017
+mar 31, 2021 3:04:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=499615}
+mar 31, 2021 3:04:07 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:56}] to localhost:27017
+mar 31, 2021 3:06:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:06:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:06:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:57}] to localhost:27017
+mar 31, 2021 3:06:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=460837}
+mar 31, 2021 3:06:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:58}] to localhost:27017
+mar 31, 2021 3:07:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:07:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:07:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:59}] to localhost:27017
+mar 31, 2021 3:07:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=639843}
+mar 31, 2021 3:07:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:60}] to localhost:27017
+mar 31, 2021 3:13:18 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:13:18 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:13:18 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:61}] to localhost:27017
+mar 31, 2021 3:13:18 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=471706}
+mar 31, 2021 3:13:18 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:62}] to localhost:27017
+mar 31, 2021 3:19:06 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:08 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:08 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:10 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:11 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:12 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:15 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:16 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:17 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:19 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:20 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:19:22 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso exitoso
+mar 31, 2021 3:20:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:20:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:20:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:63}] to localhost:27017
+mar 31, 2021 3:20:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=557820}
+mar 31, 2021 3:20:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:64}] to localhost:27017
+mar 31, 2021 3:21:12 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso exitoso
+mar 31, 2021 3:22:04 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso exitoso
+mar 31, 2021 3:22:05 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso exitoso
+mar 31, 2021 3:22:06 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso exitoso
+mar 31, 2021 3:22:06 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso exitoso
+mar 31, 2021 3:22:06 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso exitoso
+mar 31, 2021 3:22:13 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso exitoso
+mar 31, 2021 3:22:14 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso exitoso
+mar 31, 2021 3:22:15 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso exitoso
+mar 31, 2021 3:22:15 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso exitoso
+mar 31, 2021 3:22:17 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso exitoso
+mar 31, 2021 3:22:17 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso exitoso
+mar 31, 2021 3:23:54 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:23:54 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:23:54 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:23:54 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+// Error: EvalError: Command not found: log( java.lang.String )
+mar 31, 2021 3:25:20 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:20 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:20 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:20 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+mar 31, 2021 3:25:23 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:23 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:23 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:23 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:30 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:30 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:30 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:30 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:31 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:31 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:31 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:31 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:33 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:33 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:33 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:33 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:37 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:37 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:37 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:37 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:41 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:41 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:41 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:41 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:43 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:43 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:43 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:43 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:44 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:44 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:44 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:44 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:25:50 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+mar 31, 2021 3:27:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:27:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:27:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:65}] to localhost:27017
+mar 31, 2021 3:27:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=607787}
+mar 31, 2021 3:27:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:66}] to localhost:27017
+<><><><><><><><><><><><><><><><><><><><><><>
+ERROR AL EJECUTAR PROCESO 1
+Can't find 1 bundle
+<><><><><><><><><><><><><><><><><><><><><><>
+mar 31, 2021 3:28:00 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:28:01 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:28:01 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:67}] to localhost:27017
+mar 31, 2021 3:28:01 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=652030}
+mar 31, 2021 3:28:01 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:68}] to localhost:27017
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:28:05 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:28:05 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:28:05 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:28:05 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:28:11 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:28:11 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:28:11 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:28:11 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:28:15 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:28:15 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:28:15 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:28:15 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+2222222222222222222222222222222222222222222222
+mar 31, 2021 3:28:19 AM bsh.Reflect invokeMethod
+INFORMACIÓN: Proceso INFO
+mar 31, 2021 3:28:19 AM bsh.Reflect invokeMethod
+DESACTIVADO: Proceso OFF
+mar 31, 2021 3:28:19 AM bsh.Reflect invokeMethod
+GRAVE: Proceso SEVERE
+mar 31, 2021 3:28:19 AM bsh.Reflect invokeMethod
+ADVERTENCIA: Proceso WARNING
+mar 31, 2021 3:31:14 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:31:14 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:31:14 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:69}] to localhost:27017
+mar 31, 2021 3:31:14 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=456271}
+mar 31, 2021 3:31:14 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:70}] to localhost:27017
+<><><><><><><><><><><><><><><><><><><><><><>
+ERROR AL EJECUTAR PROCESO 1
+Can't find 1 bundle
+<><><><><><><><><><><><><><><><><><><><><><>
+<><><><><><><><><><><><><><><><><><><><><><>
+ERROR AL EJECUTAR PROCESO 1
+Can't find 1 bundle
+<><><><><><><><><><><><><><><><><><><><><><>
+<><><><><><><><><><><><><><><><><><><><><><>
+ERROR AL EJECUTAR PROCESO 1
+Can't find 1 bundle
+<><><><><><><><><><><><><><><><><><><><><><>
+mar 31, 2021 3:43:24 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:43:24 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:43:24 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:71}] to localhost:27017
+mar 31, 2021 3:43:24 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=1318802}
+mar 31, 2021 3:43:24 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:72}] to localhost:27017
+2222222222222222222222222222222222222222222222
+// Error: EvalError: Attempt to resolve method: log() on undefined variable or class name: log
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+// Error: EvalError: Command not found: suma( int, int )
+2222222222222222222222222222222222222222222222
+// Error: EvalError: Command not found: suma( int, int )
+2222222222222222222222222222222222222222222222
+// Error: EvalError: Command not found: suma( int, int )
+2222222222222222222222222222222222222222222222
+// Error: EvalError: Command not found: suma( int, int )
+mar 31, 2021 3:58:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 3:58:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 3:58:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:73}] to localhost:27017
+mar 31, 2021 3:58:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=594271}
+mar 31, 2021 3:58:28 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:74}] to localhost:27017
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:75}] to localhost:27017
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=599342}
+mar 31, 2021 4:00:04 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:76}] to localhost:27017
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:77}] to localhost:27017
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=526979}
+mar 31, 2021 4:00:42 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:78}] to localhost:27017
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:79}] to localhost:27017
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=576462}
+mar 31, 2021 4:01:12 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:80}] to localhost:27017
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:81}] to localhost:27017
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=565338}
+mar 31, 2021 4:01:47 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:82}] to localhost:27017
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+2222222222222222222222222222222222222222222222
+222
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:83}] to localhost:27017
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=610099}
+mar 31, 2021 4:09:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:84}] to localhost:27017
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+// Error: Parser Error: Parse error at line 1, column 29.  Encountered: )
+mar 31, 2021 4:11:22 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:85}] to localhost:27017
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=559917}
+mar 31, 2021 4:11:23 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:86}] to localhost:27017
+222
+222
+222
+222
+222
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:87}] to localhost:27017
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=494924}
+mar 31, 2021 4:12:31 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:88}] to localhost:27017
+222
+222
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:89}] to localhost:27017
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=451705}
+mar 31, 2021 4:17:38 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:90}] to localhost:27017
+222
+222
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:91}] to localhost:27017
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=643607}
+mar 31, 2021 4:27:06 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:92}] to localhost:27017
+21/03/31 04:27:11,ºTESTº,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:01,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:02,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:03,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:04,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:05,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:06,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+21/03/31 04:28:07,,msg
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:93}] to localhost:27017
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=524131}
+mar 31, 2021 4:29:52 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:94}] to localhost:27017
+21/03/31 04:31:10,,>> INICIANDO BNE PAGES
+21/03/31 04:31:52,,>> INICIANDO BNE PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+// Error: EvalError: Error in method invocation: Method hassNext() not found in class'com.mongodb.MongoBatchCursorAdapter'
+21/03/31 04:37:32,,>> INICIANDO BNE PAGES
+mar 31, 2021 4:37:32 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:3, serverValue:95}] to localhost:27017
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:39:13,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES
+21/03/31 04:40:08,computrabajo.pages,
+>> TERMINANDO COMPUTRABAJO PAGES (0 MIN)
+21/03/31 04:43:16,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:44:21,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:45:30,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:45:45,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:45:53,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:06,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:08,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:22,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:31,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:39,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:46,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:49,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:46:54,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+21/03/31 04:47:37,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+// Error: EvalError: Error in method invocation: Method log( char, java.lang.String ) not found in class'fabnun.jsoupscheduler.Tools'
+mar 31, 2021 4:49:14 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:96}] to localhost:27017
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=510263}
+mar 31, 2021 4:49:15 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:97}] to localhost:27017
+21/03/31 04:49:19,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+21/03/31 04:49:23,empleos-publicos.pages,
+>> TERMINANDO BNE-PUBLICO PAGES (0 MIN)
+21/03/31 04:49:50,,>> INICIANDO BNE PAGES
+21/03/31 04:49:58,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES
+21/03/31 04:50:18,empleos-publicos.pages,>> INICIANDO EMPLEOS-PUBLICO PAGES
+mar 31, 2021 4:50:20 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:3, serverValue:98}] to localhost:27017
+21/03/31 04:50:22,empleos-publicos.pages,
+>> TERMINANDO BNE-PUBLICO PAGES (0 MIN)
+21/03/31 04:50:39,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:43,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:44,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:47,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:48,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:48,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:49,,https://elastic.serviciocivil.cl/listado_teee/_doc/_search?from=0&size=35
+21/03/31 04:50:54,computrabajo.pages,
+>> TERMINANDO COMPUTRABAJO PAGES (0 MIN)
+21/03/31 04:51:04,ºTESTº,222
+21/03/31 04:54:07,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES
+mar 31, 2021 4:55:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 4:55:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 4:55:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:99}] to localhost:27017
+mar 31, 2021 4:55:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=2775692}
+mar 31, 2021 4:55:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:100}] to localhost:27017
+21/03/31 04:55:54,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES
+mar 31, 2021 5:02:21 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 5:02:21 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 5:02:21 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:101}] to localhost:27017
+mar 31, 2021 5:02:21 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=551957}
+mar 31, 2021 5:02:21 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:102}] to localhost:27017
+21/03/31 05:02:50,computrabajo.pages,>> INICIANDO COMPUTRABAJO PAGES
+21/03/31 05:02:59,,computrabajo.pages [10:21:17 19:52:53]
+21/03/31 05:02:59,,empleos-publicos.pages [10:04:44 19:02:42]
+21/03/31 05:02:59,,compare [23:39:00 23:39:03 23:39:06 23:39:09 23:39:12 23:39:15 23:39:18 23:39:21 23:39:2]
+21/03/31 05:02:59,,bne.pages [10:25:56 19:59:20]
+21/03/31 05:03:00,,bne.read [05:03:00 05:03:02 05:03:03 05:03:06 05:03:07 05:03:09 05:03:11 05:03:13 05:03:1]
+21/03/31 05:03:00,,computrabajo.read [05:03:00 05:03:02 05:03:04 05:03:05 05:03:08 05:03:09 05:03:11 05:03:13 05:03:1]
+21/03/31 05:03:00,,bne.read [05:03:02 05:03:03 05:03:06 05:03:07 05:03:09 05:03:11 05:03:13 05:03:16 05:03:1]
+21/03/31 05:03:00,,computrabajo.read [05:03:02 05:03:04 05:03:05 05:03:08 05:03:09 05:03:11 05:03:13 05:03:15 05:03:1]
+21/03/31 05:03:02,,bne.read [05:03:03 05:03:06 05:03:07 05:03:09 05:03:11 05:03:13 05:03:16 05:03:17 05:03:2]
+21/03/31 05:03:02,,computrabajo.read [05:03:04 05:03:05 05:03:08 05:03:09 05:03:11 05:03:13 05:03:15 05:03:18 05:03:2]
+21/03/31 05:03:04,,bne.read [05:03:06 05:03:07 05:03:09 05:03:11 05:03:13 05:03:16 05:03:17 05:03:20 05:03:2]
+21/03/31 05:03:04,,computrabajo.read [05:03:05 05:03:08 05:03:09 05:03:11 05:03:13 05:03:15 05:03:18 05:03:20 05:03:2]
+21/03/31 05:03:06,,computrabajo.read [05:03:08 05:03:09 05:03:11 05:03:13 05:03:15 05:03:18 05:03:20 05:03:22 05:03:2]
+21/03/31 05:03:06,,bne.read [05:03:07 05:03:09 05:03:11 05:03:13 05:03:16 05:03:17 05:03:20 05:03:22 05:03:2]
+21/03/31 05:03:08,,bne.read [05:03:09 05:03:11 05:03:13 05:03:16 05:03:17 05:03:20 05:03:22 05:03:24 05:03:2]
+21/03/31 05:03:08,,computrabajo.read [05:03:09 05:03:11 05:03:13 05:03:15 05:03:18 05:03:20 05:03:22 05:03:24 05:03:2]
+21/03/31 05:03:10,,bne.read [05:03:11 05:03:13 05:03:16 05:03:17 05:03:20 05:03:22 05:03:24 05:03:25 05:03:2]
+21/03/31 05:03:10,,computrabajo.read [05:03:11 05:03:13 05:03:15 05:03:18 05:03:20 05:03:22 05:03:24 05:03:25 05:03:2]
+21/03/31 05:03:11,,bne.read [05:03:13 05:03:16 05:03:17 05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:3]
+21/03/31 05:03:12,,computrabajo.read [05:03:13 05:03:15 05:03:18 05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:3]
+21/03/31 05:03:13,,bne.read [05:03:16 05:03:17 05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:3]
+21/03/31 05:03:14,,computrabajo.read [05:03:15 05:03:18 05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:3]
+21/03/31 05:03:15,,computrabajo.read [05:03:18 05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:3]
+21/03/31 05:03:17,,bne.read [05:03:17 05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:3]
+21/03/31 05:03:17,,bne.read [05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:34 05:03:3]
+21/03/31 05:03:19,,computrabajo.read [05:03:20 05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:33 05:03:3]
+21/03/31 05:03:20,,computrabajo.read [05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:33 05:03:35 05:03:3]
+21/03/31 05:03:21,,bne.read [05:03:22 05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:34 05:03:36 05:03:3]
+21/03/31 05:03:22,,bne.read [05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:34 05:03:36 05:03:37 05:03:3]
+21/03/31 05:03:22,,computrabajo.read [05:03:24 05:03:25 05:03:28 05:03:30 05:03:31 05:03:33 05:03:35 05:03:37 05:03:4]
+21/03/31 05:03:24,,bne.read [05:03:25 05:03:28 05:03:30 05:03:31 05:03:34 05:03:36 05:03:37 05:03:39 05:03:4]
+21/03/31 05:03:25,,computrabajo.read [05:03:28 05:03:30 05:03:31 05:03:33 05:03:35 05:03:37 05:03:40 05:03:41 05:03:4]
+21/03/31 05:03:26,,bne.read [05:03:28 05:03:30 05:03:31 05:03:34 05:03:36 05:03:37 05:03:39 05:03:42 05:03:4]
+21/03/31 05:03:28,,bne.read [05:03:30 05:03:31 05:03:34 05:03:36 05:03:37 05:03:39 05:03:42 05:03:43 05:03:4]
+21/03/31 05:03:28,,computrabajo.read [05:03:30 05:03:31 05:03:33 05:03:35 05:03:37 05:03:40 05:03:41 05:03:43 05:03:4]
+21/03/31 05:03:30,,computrabajo.read [05:03:31 05:03:33 05:03:35 05:03:37 05:03:40 05:03:41 05:03:43 05:03:46 05:03:4]
+21/03/31 05:03:30,,bne.read [05:03:31 05:03:34 05:03:36 05:03:37 05:03:39 05:03:42 05:03:43 05:03:45 05:03:4]
+21/03/31 05:03:32,,bne.read [05:03:34 05:03:36 05:03:37 05:03:39 05:03:42 05:03:43 05:03:45 05:03:47 05:03:4]
+21/03/31 05:03:32,,computrabajo.read [05:03:33 05:03:35 05:03:37 05:03:40 05:03:41 05:03:43 05:03:46 05:03:47 05:03:4]
+21/03/31 05:03:33,,computrabajo.read [05:03:35 05:03:37 05:03:40 05:03:41 05:03:43 05:03:46 05:03:47 05:03:49 05:03:5]
+21/03/31 05:03:34,,bne.read [05:03:36 05:03:37 05:03:39 05:03:42 05:03:43 05:03:45 05:03:47 05:03:49 05:03:5]
+21/03/31 05:03:36,,computrabajo.read [05:03:37 05:03:40 05:03:41 05:03:43 05:03:46 05:03:47 05:03:49 05:03:51 05:03:5]
+21/03/31 05:03:37,,bne.read [05:03:37 05:03:39 05:03:42 05:03:43 05:03:45 05:03:47 05:03:49 05:03:52 05:03:5]
+21/03/31 05:03:37,,computrabajo.read [05:03:40 05:03:41 05:03:43 05:03:46 05:03:47 05:03:49 05:03:51 05:03:53 05:03:5]
+21/03/31 05:03:37,,bne.read [05:03:39 05:03:42 05:03:43 05:03:45 05:03:47 05:03:49 05:03:52 05:03:54 05:03:5]
+21/03/31 05:03:39,,bne.read [05:03:42 05:03:43 05:03:45 05:03:47 05:03:49 05:03:52 05:03:54 05:03:56 05:03:5]
+21/03/31 05:03:41,,computrabajo.read [05:03:41 05:03:43 05:03:46 05:03:47 05:03:49 05:03:51 05:03:53 05:03:55 05:03:5]
+21/03/31 05:03:41,,computrabajo.read [05:03:43 05:03:46 05:03:47 05:03:49 05:03:51 05:03:53 05:03:55 05:03:58 05:04:0]
+21/03/31 05:03:42,,bne.read [05:03:43 05:03:45 05:03:47 05:03:49 05:03:52 05:03:54 05:03:56 05:03:58 05:04:0]
+21/03/31 05:03:43,,computrabajo.read [05:03:46 05:03:47 05:03:49 05:03:51 05:03:53 05:03:55 05:03:58 05:04:00 05:04:0]
+21/03/31 05:03:43,,bne.read [05:03:45 05:03:47 05:03:49 05:03:52 05:03:54 05:03:56 05:03:58 05:04:00 05:04:0]
+21/03/31 05:03:45,,bne.read [05:03:47 05:03:49 05:03:52 05:03:54 05:03:56 05:03:58 05:04:00 05:04:02 05:04:0]
+21/03/31 05:03:47,,computrabajo.read [05:03:47 05:03:49 05:03:51 05:03:53 05:03:55 05:03:58 05:04:00 05:04:02 05:04:0]
+21/03/31 05:03:48,,computrabajo.read [05:03:49 05:03:51 05:03:53 05:03:55 05:03:58 05:04:00 05:04:02 05:04:04 05:04:0]
+21/03/31 05:03:48,,bne.read [05:03:49 05:03:52 05:03:54 05:03:56 05:03:58 05:04:00 05:04:02 05:04:04 05:04:0]
+21/03/31 05:03:50,,bne.read [05:03:52 05:03:54 05:03:56 05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:0]
+21/03/31 05:03:50,,computrabajo.read [05:03:51 05:03:53 05:03:55 05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:0]
+21/03/31 05:03:52,,computrabajo.read [05:03:53 05:03:55 05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:1]
+21/03/31 05:03:52,,bne.read [05:03:54 05:03:56 05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:0]
+21/03/31 05:03:53,,computrabajo.read [05:03:55 05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:10 05:04:1]
+21/03/31 05:03:54,,bne.read [05:03:56 05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:09 05:04:1]
+21/03/31 05:03:55,,computrabajo.read [05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:10 05:04:12 05:04:1]
+21/03/31 05:03:56,,bne.read [05:03:58 05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:09 05:04:12 05:04:1]
+21/03/31 05:03:58,,computrabajo.read [05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:10 05:04:12 05:04:13 05:04:1]
+21/03/31 05:03:59,,bne.read [05:04:00 05:04:02 05:04:04 05:04:05 05:04:07 05:04:09 05:04:12 05:04:13 05:04:1]
+21/03/31 05:04:01,,computrabajo.read [05:04:02 05:04:04 05:04:05 05:04:07 05:04:10 05:04:12 05:04:13 05:04:15 05:04:1]
+21/03/31 05:04:01,,bne.read [05:04:02 05:04:04 05:04:05 05:04:07 05:04:09 05:04:12 05:04:13 05:04:15 05:04:1]
+21/03/31 05:04:02,,computrabajo.read [05:04:04 05:04:05 05:04:07 05:04:10 05:04:12 05:04:13 05:04:15 05:04:17 05:04:2]
+21/03/31 05:04:03,,bne.read [05:04:04 05:04:05 05:04:07 05:04:09 05:04:12 05:04:13 05:04:15 05:04:17 05:04:2]
+21/03/31 05:04:05,,computrabajo.read [05:04:05 05:04:07 05:04:10 05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:2]
+21/03/31 05:04:05,,bne.read [05:04:05 05:04:07 05:04:09 05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:2]
+21/03/31 05:04:05,,computrabajo.read [05:04:07 05:04:10 05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:21 05:04:2]
+21/03/31 05:04:06,,bne.read [05:04:07 05:04:09 05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:22 05:04:2]
+21/03/31 05:04:07,,computrabajo.read [05:04:10 05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:21 05:04:23 05:04:2]
+21/03/31 05:04:07,,bne.read [05:04:09 05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:22 05:04:24 05:04:2]
+21/03/31 05:04:10,,bne.read [05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:22 05:04:24 05:04:25 05:04:2]
+21/03/31 05:04:10,,computrabajo.read [05:04:12 05:04:13 05:04:15 05:04:17 05:04:20 05:04:21 05:04:23 05:04:25 05:04:2]
+21/03/31 05:04:12,,bne.read [05:04:13 05:04:15 05:04:17 05:04:20 05:04:22 05:04:24 05:04:25 05:04:27 05:04:3]
+21/03/31 05:04:13,,computrabajo.read [05:04:13 05:04:15 05:04:17 05:04:20 05:04:21 05:04:23 05:04:25 05:04:28 05:04:2]
+21/03/31 05:04:13,,bne.read [05:04:15 05:04:17 05:04:20 05:04:22 05:04:24 05:04:25 05:04:27 05:04:30 05:04:3]
+21/03/31 05:04:14,,computrabajo.read [05:04:15 05:04:17 05:04:20 05:04:21 05:04:23 05:04:25 05:04:28 05:04:29 05:04:3]
+21/03/31 05:04:15,,computrabajo.read [05:04:17 05:04:20 05:04:21 05:04:23 05:04:25 05:04:28 05:04:29 05:04:31 05:04:3]
+21/03/31 05:04:16,,bne.read [05:04:17 05:04:20 05:04:22 05:04:24 05:04:25 05:04:27 05:04:30 05:04:32 05:04:3]
+21/03/31 05:04:17,,computrabajo.read [05:04:20 05:04:21 05:04:23 05:04:25 05:04:28 05:04:29 05:04:31 05:04:34 05:04:3]
+21/03/31 05:04:17,,bne.read [05:04:20 05:04:22 05:04:24 05:04:25 05:04:27 05:04:30 05:04:32 05:04:33 05:04:3]
+21/03/31 05:04:21,,computrabajo.read [05:04:21 05:04:23 05:04:25 05:04:28 05:04:29 05:04:31 05:04:34 05:04:35 05:04:3]
+21/03/31 05:04:21,,bne.read [05:04:22 05:04:24 05:04:25 05:04:27 05:04:30 05:04:32 05:04:33 05:04:35 05:04:3]
+21/03/31 05:04:22,,computrabajo.read [05:04:23 05:04:25 05:04:28 05:04:29 05:04:31 05:04:34 05:04:35 05:04:38 05:04:3]
+21/03/31 05:04:23,,bne.read [05:04:24 05:04:25 05:04:27 05:04:30 05:04:32 05:04:33 05:04:35 05:04:37 05:04:4]
+21/03/31 05:04:23,,computrabajo.read [05:04:25 05:04:28 05:04:29 05:04:31 05:04:34 05:04:35 05:04:38 05:04:39 05:04:4]
+21/03/31 05:04:24,,bne.read [05:04:25 05:04:27 05:04:30 05:04:32 05:04:33 05:04:35 05:04:37 05:04:40 05:04:4]
+21/03/31 05:04:25,,bne.read [05:04:27 05:04:30 05:04:32 05:04:33 05:04:35 05:04:37 05:04:40 05:04:41 05:04:4]
+21/03/31 05:04:26,,computrabajo.read [05:04:28 05:04:29 05:04:31 05:04:34 05:04:35 05:04:38 05:04:39 05:04:42 05:04:4]
+21/03/31 05:04:27,,bne.read [05:04:30 05:04:32 05:04:33 05:04:35 05:04:37 05:04:40 05:04:41 05:04:44 05:04:4]
+21/03/31 05:04:28,,computrabajo.read [05:04:29 05:04:31 05:04:34 05:04:35 05:04:38 05:04:39 05:04:42 05:04:43 05:04:4]
+21/03/31 05:04:29,,computrabajo.read [05:04:31 05:04:34 05:04:35 05:04:38 05:04:39 05:04:42 05:04:43 05:04:46 05:04:4]
+21/03/31 05:04:30,,bne.read [05:04:32 05:04:33 05:04:35 05:04:37 05:04:40 05:04:41 05:04:44 05:04:46 05:04:4]
+21/03/31 05:04:32,,computrabajo.read [05:04:34 05:04:35 05:04:38 05:04:39 05:04:42 05:04:43 05:04:46 05:04:47 05:04:4]
+21/03/31 05:04:33,,bne.read [05:04:33 05:04:35 05:04:37 05:04:40 05:04:41 05:04:44 05:04:46 05:04:48 05:04:4]
+21/03/31 05:04:34,,bne.read [05:04:35 05:04:37 05:04:40 05:04:41 05:04:44 05:04:46 05:04:48 05:04:49 05:04:5]
+21/03/31 05:04:34,,computrabajo.read [05:04:35 05:04:38 05:04:39 05:04:42 05:04:43 05:04:46 05:04:47 05:04:49 05:04:5]
+21/03/31 05:04:36,,computrabajo.read [05:04:38 05:04:39 05:04:42 05:04:43 05:04:46 05:04:47 05:04:49 05:04:51 05:04:5]
+21/03/31 05:04:36,,bne.read [05:04:37 05:04:40 05:04:41 05:04:44 05:04:46 05:04:48 05:04:49 05:04:51 05:04:5]
+mar 31, 2021 5:04:36 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:3, serverValue:103}] to localhost:27017
+21/03/31 05:04:38,,bne.read [05:04:40 05:04:41 05:04:44 05:04:46 05:04:48 05:04:49 05:04:51 05:04:53 05:04:5]
+21/03/31 05:04:38,,computrabajo.read [05:04:39 05:04:42 05:04:43 05:04:46 05:04:47 05:04:49 05:04:51 05:04:54 05:04:5]
+21/03/31 05:04:40,,computrabajo.read [05:04:42 05:04:43 05:04:46 05:04:47 05:04:49 05:04:51 05:04:54 05:04:56 05:04:5]
+21/03/31 05:04:40,,bne.read [05:04:41 05:04:44 05:04:46 05:04:48 05:04:49 05:04:51 05:04:53 05:04:55 05:04:5]
+21/03/31 05:04:41,,bne.read [05:04:44 05:04:46 05:04:48 05:04:49 05:04:51 05:04:53 05:04:55 05:04:57 05:04:5]
+21/03/31 05:04:42,,computrabajo.read [05:04:43 05:04:46 05:04:47 05:04:49 05:04:51 05:04:54 05:04:56 05:04:57 05:04:5]
+21/03/31 05:04:43,,computrabajo.read [05:04:46 05:04:47 05:04:49 05:04:51 05:04:54 05:04:56 05:04:57 05:04:59 05:05:0]
+21/03/31 05:04:45,,bne.read [05:04:46 05:04:48 05:04:49 05:04:51 05:04:53 05:04:55 05:04:57 05:04:59 05:05:0]
+21/03/31 05:04:46,,bne.read [05:04:48 05:04:49 05:04:51 05:04:53 05:04:55 05:04:57 05:04:59 05:05:01 05:05:0]
+21/03/31 05:04:47,,computrabajo.read [05:04:47 05:04:49 05:04:51 05:04:54 05:04:56 05:04:57 05:04:59 05:05:01 05:05:0]
+21/03/31 05:04:48,,computrabajo.read [05:04:49 05:04:51 05:04:54 05:04:56 05:04:57 05:04:59 05:05:01 05:05:04 05:05:0]
+21/03/31 05:04:48,,bne.read [05:04:49 05:04:51 05:04:53 05:04:55 05:04:57 05:04:59 05:05:01 05:05:04 05:05:0]
+mar 31, 2021 5:05:55 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 5:05:55 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 5:05:55 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:104}] to localhost:27017
+mar 31, 2021 5:05:55 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=578673}
+mar 31, 2021 5:05:55 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:105}] to localhost:27017
+mar 31, 2021 11:28:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 11:28:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 11:28:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:106}] to localhost:27017
+mar 31, 2021 11:28:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=539063}
+mar 31, 2021 11:28:49 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:107}] to localhost:27017
+mar 31, 2021 11:32:09 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 11:32:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 11:32:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:108}] to localhost:27017
+mar 31, 2021 11:32:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=472463}
+mar 31, 2021 11:32:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:109}] to localhost:27017
+mar 31, 2021 11:34:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 11:34:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 11:34:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:110}] to localhost:27017
+mar 31, 2021 11:34:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=574954}
+mar 31, 2021 11:34:16 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:111}] to localhost:27017
+java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:216)
+	at java.nio.channels.Channels.writeFullyImpl(Channels.java:78)
+	at java.nio.channels.Channels.writeFully(Channels.java:101)
+	at java.nio.channels.Channels.access$000(Channels.java:61)
+	at java.nio.channels.Channels$1.write(Channels.java:174)
+	at java.nio.file.Files.write(Files.java:3297)
+	at fabnun.jsoupscheduler.Ui.lambda$saveGui$2(Ui.java:257)
+	at fabnun.jsoupscheduler.Debouncer$1.run(Debouncer.java:31)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:216)
+	at java.nio.channels.Channels.writeFullyImpl(Channels.java:78)
+	at java.nio.channels.Channels.writeFully(Channels.java:101)
+	at java.nio.channels.Channels.access$000(Channels.java:61)
+	at java.nio.channels.Channels$1.write(Channels.java:174)
+	at java.nio.file.Files.write(Files.java:3297)
+	at fabnun.jsoupscheduler.Ui.lambda$saveGui$2(Ui.java:257)
+	at fabnun.jsoupscheduler.Debouncer$1.run(Debouncer.java:31)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+mar 31, 2021 11:39:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 11:39:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 11:39:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:112}] to localhost:27017
+mar 31, 2021 11:39:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=732422}
+mar 31, 2021 11:39:29 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:113}] to localhost:27017
+java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:216)
+	at java.nio.channels.Channels.writeFullyImpl(Channels.java:78)
+	at java.nio.channels.Channels.writeFully(Channels.java:101)
+	at java.nio.channels.Channels.access$000(Channels.java:61)
+	at java.nio.channels.Channels$1.write(Channels.java:174)
+	at java.nio.file.Files.write(Files.java:3297)
+	at fabnun.jsoupscheduler.Ui.lambda$saveGui$2(Ui.java:258)
+	at fabnun.jsoupscheduler.Debouncer$1.run(Debouncer.java:31)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:216)
+	at java.nio.channels.Channels.writeFullyImpl(Channels.java:78)
+	at java.nio.channels.Channels.writeFully(Channels.java:101)
+	at java.nio.channels.Channels.access$000(Channels.java:61)
+	at java.nio.channels.Channels$1.write(Channels.java:174)
+	at java.nio.file.Files.write(Files.java:3297)
+	at fabnun.jsoupscheduler.Ui.lambda$saveGui$2(Ui.java:258)
+	at fabnun.jsoupscheduler.Debouncer$1.run(Debouncer.java:31)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:216)
+	at java.nio.channels.Channels.writeFullyImpl(Channels.java:78)
+	at java.nio.channels.Channels.writeFully(Channels.java:101)
+	at java.nio.channels.Channels.access$000(Channels.java:61)
+	at java.nio.channels.Channels$1.write(Channels.java:174)
+	at java.nio.file.Files.write(Files.java:3297)
+	at fabnun.jsoupscheduler.Ui.lambda$saveGui$2(Ui.java:258)
+	at fabnun.jsoupscheduler.Debouncer$1.run(Debouncer.java:31)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+mar 31, 2021 11:42:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 11:42:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 11:42:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:114}] to localhost:27017
+mar 31, 2021 11:42:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=591010}
+mar 31, 2021 11:42:10 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:115}] to localhost:27017
+mar 31, 2021 11:57:34 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 11:57:35 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 11:57:35 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:116}] to localhost:27017
+mar 31, 2021 11:57:35 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=594843}
+mar 31, 2021 11:57:35 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:117}] to localhost:27017
+mar 31, 2021 11:57:59 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 11:57:59 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 11:57:59 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:118}] to localhost:27017
+mar 31, 2021 11:57:59 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=604566}
+mar 31, 2021 11:57:59 AM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:119}] to localhost:27017
+java.lang.ClassCastException: javax.swing.JTextArea cannot be cast to org.fife.ui.rsyntaxtextarea.RSyntaxTextArea
+	at fabnun.jsoupscheduler.Ui.loadGui(Ui.java:173)
+	at fabnun.jsoupscheduler.Ui.loadGui(Ui.java:152)
+	at fabnun.jsoupscheduler.Ui.<init>(Ui.java:86)
+	at fabnun.jsoupscheduler.Ui.lambda$main$5(Ui.java:986)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at org.GNOME.Accessibility.AtkWrapper$6.dispatchEvent(AtkWrapper.java:715)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+mar 31, 2021 12:04:32 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 12:04:32 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 12:04:32 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:120}] to localhost:27017
+mar 31, 2021 12:04:32 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=628694}
+mar 31, 2021 12:04:32 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:121}] to localhost:27017
+mar 31, 2021 12:05:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 12:05:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 12:05:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:122}] to localhost:27017
+mar 31, 2021 12:05:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=680288}
+mar 31, 2021 12:05:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:123}] to localhost:27017
+mar 31, 2021 12:06:02 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 12:06:02 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 12:06:02 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:124}] to localhost:27017
+mar 31, 2021 12:06:02 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=624142}
+mar 31, 2021 12:06:02 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:125}] to localhost:27017
+mar 31, 2021 12:06:54 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 12:06:54 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 12:06:54 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:126}] to localhost:27017
+mar 31, 2021 12:06:54 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=628458}
+mar 31, 2021 12:06:54 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:127}] to localhost:27017
+mar 31, 2021 12:10:48 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 12:10:48 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 12:10:48 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:128}] to localhost:27017
+mar 31, 2021 12:10:48 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=613122}
+mar 31, 2021 12:10:48 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:129}] to localhost:27017
+mar 31, 2021 12:13:23 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+mar 31, 2021 12:13:23 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+mar 31, 2021 12:13:23 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:1, serverValue:130}] to localhost:27017
+mar 31, 2021 12:13:23 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, roundTripTimeNanos=564305}
+mar 31, 2021 12:13:23 PM com.mongodb.diagnostics.logging.JULLogger log
+INFORMACIÓN: Opened connection [connectionId{localValue:2, serverValue:131}] to localhost:27017

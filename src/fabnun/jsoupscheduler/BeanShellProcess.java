@@ -70,14 +70,23 @@ public class BeanShellProcess {
     @SuppressWarnings("SynchronizeOnNonFinalField")
     static void addToList(BeanShellProcess process) {
         synchronized (Ui.listModel) {
-            Ui.listModel.addElement(process);
+            try {
+                Ui.listModel.addElement(process);
+            } catch (Exception e) {
+                System.err.println(">>>>>>> addToList "+e.getLocalizedMessage());
+            }
         }
     }
 
     @SuppressWarnings("SynchronizeOnNonFinalField")
     static void removeToList(BeanShellProcess process) {
         synchronized (Ui.listModel) {
-            Ui.listModel.removeElement(process);
+            try {
+                Ui.listModel.removeElement(process);
+            } catch (Exception e) {
+                System.err.println(">>>>>>> removeToList "+e.getLocalizedMessage());
+            }
+            
         }
     }
 

@@ -6,12 +6,18 @@
 package fabnun.jsoupscheduler;
 
 import com.formdev.flatlaf.IntelliJTheme;
+import com.mongodb.client.FindIterable;
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -28,24 +34,42 @@ import java.io.RandomAccessFile;
 import java.io.StringBufferInputStream;
 import java.nio.channels.FileLock;
 import java.nio.file.Files;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Properties;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 import javax.swing.AbstractAction;
+import javax.swing.Box;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
 import javax.swing.JViewport;
 import javax.swing.KeyStroke;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableColumnModel;
 import javax.swing.text.Document;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
@@ -55,6 +79,7 @@ import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
 import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rtextarea.SearchContext;
 import org.fife.ui.rtextarea.SearchEngine;
+import org.fife.ui.rtextarea.SearchResult;
 
 /**
  *
@@ -65,6 +90,149 @@ public class Ui extends javax.swing.JFrame {
     public static TreeMap<String, String> map = new TreeMap<>();
     public static TreeMap<String, String> input = new TreeMap<>();
     public static DefaultListModel<BeanShellProcess> listModel;
+    public static Ui instance;
+
+    int buttonTable = -1;
+    LinkedList<org.bson.Document> docs = new LinkedList<>();
+
+    @SuppressWarnings("ConvertToStringSwitch")
+    void showTable(FindIterable iterable, String name, String[] buttons, String[] cols) {
+
+        Iterator it = iterable.iterator();
+        TreeSet<String> colset = new TreeSet<>();
+        int rowSize = 0;
+        while (it.hasNext()) {
+            org.bson.Document doc = (org.bson.Document) it.next();
+            for (String s : doc.keySet()) {
+                colset.add(s);
+            }
+            rowSize++;
+        }
+        int colSize = colset.size();
+        final boolean[] editable = new boolean[colSize];
+        final Class[] classes = new Class[colSize];
+        final LinkedList<int[]> pos = new LinkedList();
+        final int[] siz = new int[colSize];
+        Object[] colsRead = (Object[]) colset.toArray();
+
+        if (cols != null) {
+            for (String c : cols) {
+                String[] def = c.split(":");
+                if (def.length > 1) {
+                    String col = def[0];
+                    int idx = Arrays.binarySearch(colsRead, col);
+                    if (idx > -1) {
+                        for (int j = 1; j < def.length; j++) {
+                            String s = def[j].trim();
+                            if (null != s) {
+                                if (s.equals("edit")) {
+                                    editable[idx] = true;
+                                } else if (s.equals("boolean")) {
+                                    classes[idx] = Boolean.class;
+                                } else if (s.equals("int")) {
+                                    classes[idx] = Integer.class;
+                                } else if (s.equals("long")) {
+                                    classes[idx] = Long.class;
+                                } else if (s.equals("double")) {
+                                    classes[idx] = Double.class;
+                                } else if (s.equals("float")) {
+                                    classes[idx] = Float.class;
+                                } else if (s.matches("\\d+px")) {
+                                    siz[idx] = Integer.parseInt(s.substring(0, s.length() - 2));
+                                } else if (s.matches("p\\d")) {
+                                    pos.add(new int[]{idx, Integer.parseInt(s.substring(1))});
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Object[][] data = new Object[rowSize][colSize];
+        it = iterable.iterator();
+        int row = 0;
+
+        docs.clear();
+        while (it.hasNext()) {
+            org.bson.Document doc = (org.bson.Document) it.next();
+            docs.add(doc);
+            for (String s : doc.keySet()) {
+                int idx = Arrays.binarySearch(colsRead, s);
+                Object val = doc.get(s);
+                data[row][idx] = val;
+            }
+            row++;
+        }
+
+        DefaultTableModel dtm = new DefaultTableModel(data, colsRead) {
+
+            @Override
+            public Class<?> getColumnClass(int c) {
+                return classes[c] == null ? String.class : classes[c];
+            }
+
+            @Override
+            public boolean isCellEditable(int i, int i1) {
+                return editable[i1];
+            }
+
+        };
+
+        jTable1.setModel(dtm);
+
+        DefaultTableCellRenderer rendar1 = new DefaultTableCellRenderer();
+        rendar1.setForeground(Color.yellow);
+        for (int i = 0; i < editable.length; i++) {
+            if (editable[i]) {
+                jTable1.getColumnModel().getColumn(i).setHeaderRenderer(rendar1);
+            }
+        }
+
+        TableColumnModel colModel = jTable1.getColumnModel();
+        for (int i = 0; i < siz.length; i++) {
+            if (siz[i] > 0) {
+                colModel.getColumn(i).setMinWidth(siz[i]);
+                colModel.getColumn(i).setMaxWidth(siz[i]);
+            }
+        }
+        for (int[] permuta : pos) {
+            colModel.moveColumn(jTable1.convertColumnIndexToView(permuta[0]), jTable1.convertColumnIndexToView(permuta[1]));
+        }
+
+        jDialog1.setName(name);
+        jToolBar1.removeAll();
+        jToolBar1.add(Box.createHorizontalGlue());
+        buttonTable = -1;
+        int buttonIdx = 0;
+        if (buttons != null) {
+            for (String s : buttons) {
+                JButton button = new JButton(s);
+                button.setBackground(Color.red);
+                final int buttIdx = buttonIdx;
+                button.addActionListener((ActionEvent ae) -> {
+                    buttonTable = buttIdx;
+                    jDialog1.setVisible(false);
+                });
+                button.setFocusable(false);
+                button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+                button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                jToolBar1.add(button);
+
+                buttonIdx++;
+            }
+        }
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        jDialog1.setSize((int) screenSize.getWidth(), (int) screenSize.getHeight());
+        setLocationRelativeTo(this);
+        jDialog1.setVisible(true);
+        System.out.println("RESULT " + buttonTable);
+
+    }
+
+    private String lastSearch = "";
 
     /**
      * Creates new form MainTest
@@ -73,10 +241,87 @@ public class Ui extends javax.swing.JFrame {
      */
     @SuppressWarnings("LeakingThisInConstructor")
     public Ui() throws FileNotFoundException {
+        instance = this;
         if (lockInstance("lockfile")) {
-            System.setOut(new PrintStream(new FileOutputStream("out.log", true)));
-            System.setErr(new PrintStream(new FileOutputStream("err.log", true)));
+            File file = new File("_lastSave_.data");
+            try {
+                if (file.exists()) {
+                    Object[] result = (Object[]) bytes2Object(Files.readAllBytes(file.toPath()));
+                    setBounds((Rectangle) result[0]);
+                    map = (TreeMap<String, String>) result[1];
+                    updateInput();
+                }
+            } catch (IOException | ClassNotFoundException e) {
+
+            }
+            if ("true".equals(input.get("log2File"))) {
+                File outLogFile = new File("out.log");
+                File errLogFile = new File("err.log");
+                SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd-HH.mm.ss");
+                if (outLogFile.exists()) {
+                    String writeName = "out.log";
+
+                    try {
+                        BasicFileAttributes attr = Files.readAttributes(outLogFile.toPath(), BasicFileAttributes.class
+                        );
+                        writeName = sdf.format(new Date(attr.creationTime().toMillis())) + "." + writeName;
+                    } catch (IOException e) {
+                    }
+                    try {
+                        Files.move(outLogFile.toPath(), new File("logHistory", writeName).toPath(), REPLACE_EXISTING);
+                    } catch (IOException ex) {
+                    }
+                }
+                if (errLogFile.exists()) {
+                    String writeName = "err.log";
+
+                    try {
+                        BasicFileAttributes attr = Files.readAttributes(errLogFile.toPath(), BasicFileAttributes.class
+                        );
+                        writeName = sdf.format(new Date(attr.creationTime().toMillis())) + "." + writeName;
+                    } catch (IOException e) {
+                    }
+                    try {
+                        Files.move(errLogFile.toPath(), new File("logHistory", writeName).toPath(), REPLACE_EXISTING);
+                    } catch (IOException ex) {
+                    }
+                }
+                System.setOut(new PrintStream(new FileOutputStream("out.log", true)));
+                System.setErr(new PrintStream(new FileOutputStream("err.log", true)));
+            }
+
             initComponents();
+
+            jTextField1.getDocument().addDocumentListener(new DocumentListener() {
+
+                @Override
+                public void insertUpdate(DocumentEvent de) {
+                    change(de);
+                }
+
+                @Override
+                public void removeUpdate(DocumentEvent de) {
+                    change(de);
+                }
+
+                @Override
+                public void changedUpdate(DocumentEvent de) {
+                    change(de);
+                }
+
+                void change(DocumentEvent de) {
+                    if (jTextField1.hasFocus()) {
+                        String newSearch = jTextField1.getText();
+                        if (!newSearch.equals(lastSearch)) {
+                            lastSearch = newSearch;
+                            find(true);
+                            jTextField1.requestFocus();
+                        }
+                    }
+                }
+
+            });
+
             jButton2.setVisible(false);
             jButton10.setVisible(false);
             jButton11.setVisible(false);
@@ -95,6 +340,14 @@ public class Ui extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "THIS APP IS ALREADY RUNNING");
             System.exit(0);
         }
+
+        jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent event) {
+                tableSel();
+            }
+        });
+
     }
 
     private static boolean lockInstance(final String lockFile) {
@@ -216,23 +469,23 @@ public class Ui extends javax.swing.JFrame {
         }
         oldInput = newInput;
         boolean change = false;
-        if (!Ui.input.get("data_base_uri").equals(data_base_uri)) {
+        if (Ui.input.containsKey("data_base_uri") && !Ui.input.get("data_base_uri").equals(data_base_uri)) {
             data_base_uri = Ui.input.get("data_base_uri");
             change = true;
         }
-        if (!Ui.input.get("data_base").equals(data_base)) {
+        if (Ui.input.containsKey("data_base") && !Ui.input.get("data_base").equals(data_base)) {
             data_base = Ui.input.get("data_base");
             change = true;
         }
-        if (!Ui.input.get("data_base_indexes").equals(data_base_indexes)) {
+        if (Ui.input.containsKey("data_base_indexes") && !Ui.input.get("data_base_indexes").equals(data_base_indexes)) {
             data_base_indexes = Ui.input.get("data_base_indexes");
             change = true;
         }
-        if (!Ui.input.get("agent").equals(agent)) {
+        if (Ui.input.containsKey("agent") && !Ui.input.get("agent").equals(agent)) {
             agent = Ui.input.get("agent");
             change = true;
         }
-        if (!Ui.input.get("timeout").equals(timeout)) {
+        if (Ui.input.containsKey("timeout") && !Ui.input.get("timeout").equals(timeout)) {
             timeout = Ui.input.get("timeout");
             change = true;
         }
@@ -251,18 +504,25 @@ public class Ui extends javax.swing.JFrame {
             jButton10.setVisible(!tab.equals("_Scheduler_") && !tab.equals("_Input_") && !tab.equals("_Read_"));
             jButton11.setVisible(!tab.equals("_Scheduler_") && !tab.equals("_Input_") && !tab.equals("_Read_"));
             final JFrame este = this;
-            debouncer.debounce(Void.class, () -> {
-                try {
-                    File file = new File(name);
-                    Files.write(file.toPath(), object2Bytes(new Object[]{getBounds(), map, tabIdx, jSplitPane1.getDividerLocation(), caretPosition, selStart, selEnd}));
-                    updateInput();
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(este, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
-                }
-            }, 500, TimeUnit.MILLISECONDS);
+            debouncer
+                    .debounce(Void.class, () -> {
+                        System.out.println(
+                                "saving...");
+                        try {
+                            File file = new File(name);
+                            Files.write(file.toPath(), object2Bytes(new Object[]{getBounds(), map, tabIdx, jSplitPane1.getDividerLocation(), caretPosition, selStart, selEnd}));
+                            updateInput();
+                            System.out.println("saved...Ok");
+                        } catch (java.nio.channels.ClosedByInterruptException e) {
+                            System.out.println("saved...Fail");
+                        } catch (IOException e) {
+                            JOptionPane.showMessageDialog(este, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+                            e.printStackTrace();
+                            System.out.println("saved...Fail");
+                        }
 
+                    }, 1000, TimeUnit.MILLISECONDS);
         }
-        System.out.print("");
     }
 
     private void saveGui() {
@@ -276,6 +536,12 @@ public class Ui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jToolBar1 = new javax.swing.JToolBar();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -299,6 +565,43 @@ public class Ui extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jButton12 = new javax.swing.JButton();
+
+        jDialog1.setModal(true);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        jDialog1.getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
+
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+        jDialog1.getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_END);
+
+        jScrollPane3.setMaximumSize(new java.awt.Dimension(320, 32767));
+        jScrollPane3.setMinimumSize(new java.awt.Dimension(320, 20));
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(320, 24));
+
+        jEditorPane1.setContentType("text/html"); // NOI18N
+        jScrollPane3.setViewportView(jEditorPane1);
+        jEditorPane1.getAccessibleContext().setAccessibleDescription("text/html\n");
+
+        jDialog1.getContentPane().add(jScrollPane3, java.awt.BorderLayout.LINE_END);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("JSoup Scheduler");
@@ -375,12 +678,10 @@ public class Ui extends javax.swing.JFrame {
         jCheckBox1.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         jCheckBox1.setText("CASE");
         jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCheckBox1.setFocusable(false);
 
         jCheckBox2.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         jCheckBox2.setText("REGEX");
         jCheckBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCheckBox2.setFocusable(false);
 
         jButton6.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         jButton6.setText("PREVIOUS");
@@ -403,10 +704,15 @@ public class Ui extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         jButton8.setText("REPLACE");
         jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton8.setFocusable(false);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
+            }
+        });
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
             }
         });
 
@@ -447,6 +753,7 @@ public class Ui extends javax.swing.JFrame {
         jButton9.setForeground(java.awt.SystemColor.activeCaptionText);
         jButton9.setText("STOP SCRIPT");
         jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.setFocusable(false);
         jButton9.setMaximumSize(new java.awt.Dimension(0, 31));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -454,6 +761,7 @@ public class Ui extends javax.swing.JFrame {
             }
         });
 
+        jList1.setFocusable(false);
         jScrollPane1.setViewportView(jList1);
 
         jButton10.setBackground(new java.awt.Color(204, 0, 0));
@@ -561,7 +869,7 @@ public class Ui extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -571,6 +879,21 @@ public class Ui extends javax.swing.JFrame {
         );
 
         jSplitPane1.setLeftComponent(jPanel3);
+
+        jButton12.setBackground(new java.awt.Color(29, 64, 59));
+        jButton12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton12.setForeground(java.awt.SystemColor.activeCaptionText);
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabnun/jsoupscheduler/icons/cfg.png"))); // NOI18N
+        jButton12.setText("CFG");
+        jButton12.setBorderPainted(false);
+        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton12.setFocusable(false);
+        jButton12.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -586,12 +909,14 @@ public class Ui extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton1)
                         .addContainerGap())
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,7 +932,8 @@ public class Ui extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jToggleButton1)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -706,9 +1032,7 @@ public class Ui extends javax.swing.JFrame {
     private void find(boolean previous) {
         SearchContext context = new SearchContext();
         String text = jTextField1.getText();
-        if (text.length() == 0) {
-            return;
-        }
+
         context.setSearchFor(text);
         context.setMatchCase(jCheckBox1.isSelected());
         context.setRegularExpression(jCheckBox2.isSelected());
@@ -718,17 +1042,16 @@ public class Ui extends javax.swing.JFrame {
         JScrollPane c = (JScrollPane) jTabbedPane1.getComponentAt(jTabbedPane1.getSelectedIndex());
         JViewport viewport = c.getViewport();
         RSyntaxTextArea textArea = (RSyntaxTextArea) viewport.getComponents()[0];
-        boolean found = SearchEngine.find(textArea, context).wasFound();
+        SearchResult sr = SearchEngine.find(textArea, context);
+        boolean found = sr.wasFound();
         if (!found) {
             int caret = textArea.getCaretPosition();
-            textArea.setCaretPosition(0);
+
+            textArea.setCaretPosition(previous ? 0 : textArea.getText().length());
             found = SearchEngine.find(textArea, context).wasFound();
             if (!found) {
                 textArea.setCaretPosition(caret);
             }
-        }
-        if (!found) {
-            JOptionPane.showMessageDialog(this, "Text not found");
         }
     }
 
@@ -799,6 +1122,60 @@ public class Ui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        if (evt.getModifiers() == KeyEvent.CTRL_MASK && evt.getKeyCode() == KeyEvent.VK_F) {
+            find(true);
+        } else if (evt.getKeyCode() == KeyEvent.VK_F3) {
+            find(true);
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void tableSel() {
+        int[] cols = jTable1.getSelectedColumns();
+        int[] rows = jTable1.getSelectedRows();
+        if (cols.length == 1 && rows.length == 1) {
+            org.bson.Document doc = docs.get(rows[0]);
+
+            StringBuilder sb = new StringBuilder();
+            for (String key : doc.keySet()) {
+                sb.append("<b>").append(key).append(":</b>").append(doc.get(key)).append("<br><br>");
+            }
+            jEditorPane1.setText(sb.toString());
+            jEditorPane1.setCaretPosition(0);
+
+        }
+    }
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int[] cols = jTable1.getSelectedColumns();
+        int[] rows = jTable1.getSelectedRows();
+
+        if (cols.length == 1 && rows.length == 1) {
+            if (jTable1.getModel().isCellEditable(rows[0], cols[0]) && jTable1.getModel().getColumnClass(cols[0]) == String.class) {
+                Object obj = jTable1.getValueAt(rows[0], cols[0]);
+                if (obj != null) {
+                    String text = obj.toString();
+                    JTextArea textArea = new JTextArea(text);
+                    textArea.setColumns(30);
+                    textArea.setLineWrap(true);
+                    textArea.setWrapStyleWord(true);
+                    JScrollPane pane = new JScrollPane(textArea);
+                    pane.setSize(new Dimension(800, 600));
+                    pane.setPreferredSize(new Dimension(800, 600));
+                    pane.setMinimumSize(new Dimension(800, 600));
+                    pane.setMaximumSize(new Dimension(800, 600));
+                    JOptionPane.showMessageDialog(null, pane, "Editar Texto",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
+
     private void run() {
         String title = jTabbedPane1.getTitleAt(jTabbedPane1.getSelectedIndex());
         new BeanShellProcess(title, map.get(title), Ui.input);
@@ -808,7 +1185,7 @@ public class Ui extends javax.swing.JFrame {
         addText(name, "");
     }
 
-    private void initTextArea(RSyntaxTextArea textArea) {
+    private void initTextArea(JTextArea textArea) {
         final UndoManager undo = new UndoManager();
         Document doc = textArea.getDocument();
         doc.addUndoableEditListener((UndoableEditEvent evt) -> {
@@ -847,8 +1224,20 @@ public class Ui extends javax.swing.JFrame {
                 new AbstractAction("Find") {
                     @Override
                     public void actionPerformed(ActionEvent evt) {
-                        jTextField1.setText(textArea.getSelectedText());
-                        find(true);
+                        String oldText = jTextField1.getText();
+                        String newText = textArea.getSelectedText();
+                        if (newText == null || newText.isEmpty()) {
+                            find(true);
+                            jTextField1.requestFocus();
+                        } else {
+                            if (!oldText.equals(newText)) {
+                                jTextField1.setText(newText);
+                                find(true);
+                            } else {
+                                find(true);
+                            }
+                        }
+                        jTextField1.setCaretPosition(jTextField1.getText().length());
                     }
                 });
 
@@ -888,26 +1277,28 @@ public class Ui extends javax.swing.JFrame {
             }
         }
         final RSyntaxTextArea textArea = new RSyntaxTextArea();
-
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
         try {
             Theme theme = Theme.load(getClass().getResourceAsStream(
-                    "/org/fife/ui/rsyntaxtextarea/themes/dark.xml"));
+                    "/org/fife/ui/rsyntaxtextarea/themes/monokai.xml"));
             theme.apply(textArea);
-            textArea.setSelectionColor(Color.green.darker().darker().darker().darker());
-            textArea.setBackground(new Color(24, 24, 24));
+            textArea.setAutoIndentEnabled(true);
+            textArea.setAntiAliasingEnabled(true);
+            textArea.setCodeFoldingEnabled(false);
+            textArea.setSyntaxEditingStyle(
+                    name.equals("_Input_") ? SyntaxConstants.SYNTAX_STYLE_PROPERTIES_FILE
+                            : name.equals("_Scheduler_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS
+                                    : name.equals("_Read_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS : SyntaxConstants.SYNTAX_STYLE_JAVA);
         } catch (IOException ioe) { // Never happens
             ioe.printStackTrace();
         }
-        textArea.setAutoIndentEnabled(true);
-        textArea.setAntiAliasingEnabled(true);
-        textArea.setCodeFoldingEnabled(false);
+        textArea.setSelectionColor(Color.green.darker().darker().darker().darker());
+        textArea.setBackground(new Color(24, 24, 24));
 
         Font font = textArea.getFont();
-        textArea.setFont(new Font(font.getFontName(), font.getStyle(), 16));
-        textArea.setSyntaxEditingStyle(
-                name.equals("_Input_") ? SyntaxConstants.SYNTAX_STYLE_PROPERTIES_FILE
-                        : name.equals("_Scheduler_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS
-                                : name.equals("_Read_") ? SyntaxConstants.SYNTAX_STYLE_HOSTS : SyntaxConstants.SYNTAX_STYLE_JAVA);
+        textArea.setFont(new Font(font.getFontName(), font.getStyle(), 14));
+
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(textArea);
         textArea.setText(text);
@@ -981,6 +1372,7 @@ public class Ui extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -991,15 +1383,21 @@ public class Ui extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
