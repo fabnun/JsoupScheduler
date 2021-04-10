@@ -8,13 +8,13 @@ package fabnun.jsoupscheduler;
 import com.formdev.flatlaf.IntelliJTheme;
 import com.mongodb.client.FindIterable;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
@@ -31,21 +31,25 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.io.RandomAccessFile;
+import java.io.Serializable;
 import java.io.StringBufferInputStream;
 import java.nio.channels.FileLock;
 import java.nio.file.Files;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.AbstractAction;
 import javax.swing.Box;
 import javax.swing.DefaultListModel;
@@ -55,6 +59,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JViewport;
 import javax.swing.KeyStroke;
@@ -68,7 +73,7 @@ import javax.swing.event.UndoableEditEvent;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import javax.swing.text.Document;
 import javax.swing.undo.CannotRedoException;
@@ -87,68 +92,112 @@ import org.fife.ui.rtextarea.SearchResult;
  */
 public class Ui extends javax.swing.JFrame {
 
+    static {
+        Locale.setDefault(Locale.ROOT);
+    }
+
+    class TabModel implements Comparable<TabModel> , Serializable {
+
+        public String text;
+        public int pos;
+        public boolean hidden = false;
+
+        public TabModel(String text, int pos, boolean hidden) {
+            this.text = text;
+            this.pos = pos;
+            this.hidden = hidden;
+        }
+
+        @Override
+        public int compareTo(TabModel t) {
+            return pos - t.pos;
+        }
+
+    }
+
     public static TreeMap<String, String> map = new TreeMap<>();
     public static TreeMap<String, String> input = new TreeMap<>();
     public static DefaultListModel<BeanShellProcess> listModel;
     public static Ui instance;
 
     int buttonTable = -1;
-    LinkedList<org.bson.Document> docs = new LinkedList<>();
+    HashMap<String, org.bson.Document> docs = new HashMap<>();
+    String[] words = null;
+
+    void showTable(FindIterable iterable, String name, String[] buttons, String[] cols) {
+        showTable(iterable, name, buttons, cols, null);
+    }
 
     @SuppressWarnings("ConvertToStringSwitch")
-    void showTable(FindIterable iterable, String name, String[] buttons, String[] cols) {
+    void showTable(FindIterable iterable, String name, String[] buttons, String[] cols, String[] words) {
+        this.words = words;
 
         Iterator it = iterable.iterator();
-        TreeSet<String> colset = new TreeSet<>();
+        LinkedList<String> colset = new LinkedList<>();
         int rowSize = 0;
         while (it.hasNext()) {
-            org.bson.Document doc = (org.bson.Document) it.next();
-            for (String s : doc.keySet()) {
-                colset.add(s);
-            }
+            it.next();
             rowSize++;
         }
+        for (String col : cols) {
+            col = col.split(":")[0];
+            if (!colset.contains(col)) {
+                colset.add(col);
+            }
+        }
+
         int colSize = colset.size();
         final boolean[] editable = new boolean[colSize];
         final Class[] classes = new Class[colSize];
-        final LinkedList<int[]> pos = new LinkedList();
         final int[] siz = new int[colSize];
         Object[] colsRead = (Object[]) colset.toArray();
 
-        if (cols != null) {
-            for (String c : cols) {
-                String[] def = c.split(":");
-                if (def.length > 1) {
-                    String col = def[0];
-                    int idx = Arrays.binarySearch(colsRead, col);
-                    if (idx > -1) {
-                        for (int j = 1; j < def.length; j++) {
-                            String s = def[j].trim();
-                            if (null != s) {
-                                if (s.equals("edit")) {
-                                    editable[idx] = true;
-                                } else if (s.equals("boolean")) {
-                                    classes[idx] = Boolean.class;
-                                } else if (s.equals("int")) {
-                                    classes[idx] = Integer.class;
-                                } else if (s.equals("long")) {
-                                    classes[idx] = Long.class;
-                                } else if (s.equals("double")) {
-                                    classes[idx] = Double.class;
-                                } else if (s.equals("float")) {
-                                    classes[idx] = Float.class;
-                                } else if (s.matches("\\d+px")) {
-                                    siz[idx] = Integer.parseInt(s.substring(0, s.length() - 2));
-                                } else if (s.matches("p\\d")) {
-                                    pos.add(new int[]{idx, Integer.parseInt(s.substring(1))});
-                                }
-                            }
+        int idx = 0;
+        for (String c : cols) {
+            String[] def = c.split(":");
+            if (def.length > 1) {
+                for (int j = 0; j < def.length; j++) {
+                    String s = def[j].trim();
+                    if (null != s) {
+                        if (s.equals("edit")) {
+                            editable[idx] = true;
+                        } else if (s.equals("boolean")) {
+                            classes[idx] = Boolean.class;
+                        } else if (s.equals("int")) {
+                            classes[idx] = Integer.class;
+                        } else if (s.equals("long")) {
+                            classes[idx] = Long.class;
+                        } else if (s.equals("double")) {
+                            classes[idx] = Double.class;
+                        } else if (s.equals("date")) {
+                            classes[idx] = Date.class;
+                        } else if (s.equals("float")) {
+                            classes[idx] = Float.class;
+                        } else if (s.matches("\\d+px")) {
+                            siz[idx] = Integer.parseInt(s.substring(0, s.length() - 2));
                         }
                     }
                 }
             }
+            idx++;
         }
 
+        TableCellRenderer tableCellRenderer = new DefaultTableCellRenderer() {
+
+            SimpleDateFormat f = new SimpleDateFormat("yy/MM/dd");
+
+            @Override
+            public Component getTableCellRendererComponent(JTable table,
+                    Object value, boolean isSelected, boolean hasFocus,
+                    int row, int column) {
+                if (value instanceof Date) {
+                    value = f.format(value);
+                }
+                return super.getTableCellRendererComponent(table, value, isSelected,
+                        hasFocus, row, column);
+            }
+        };
+        jEditorPane1.setText("");
         Object[][] data = new Object[rowSize][colSize];
         it = iterable.iterator();
         int row = 0;
@@ -156,11 +205,13 @@ public class Ui extends javax.swing.JFrame {
         docs.clear();
         while (it.hasNext()) {
             org.bson.Document doc = (org.bson.Document) it.next();
-            docs.add(doc);
-            for (String s : doc.keySet()) {
-                int idx = Arrays.binarySearch(colsRead, s);
+            docs.put(doc.get("_id").toString(), doc);
+            int idx2 = 0;
+            data[row][0] = row;
+            for (String s : colset) {
                 Object val = doc.get(s);
-                data[row][idx] = val;
+                data[row][idx2] = val;
+                idx2++;
             }
             row++;
         }
@@ -189,15 +240,18 @@ public class Ui extends javax.swing.JFrame {
             }
         }
 
+        for (int i = 0; i < colset.size(); i++) {
+            if (classes[i] == Date.class) {
+                jTable1.getColumnModel().getColumn(i).setCellRenderer(tableCellRenderer);
+            }
+        }
+
         TableColumnModel colModel = jTable1.getColumnModel();
         for (int i = 0; i < siz.length; i++) {
             if (siz[i] > 0) {
                 colModel.getColumn(i).setMinWidth(siz[i]);
                 colModel.getColumn(i).setMaxWidth(siz[i]);
             }
-        }
-        for (int[] permuta : pos) {
-            colModel.moveColumn(jTable1.convertColumnIndexToView(permuta[0]), jTable1.convertColumnIndexToView(permuta[1]));
         }
 
         jDialog1.setName(name);
@@ -291,6 +345,8 @@ public class Ui extends javax.swing.JFrame {
             }
 
             initComponents();
+
+            jEditorPane1.setMinimumSize(new Dimension(0, 0)); //Makes the text wrap to the next line
 
             jTextField1.getDocument().addDocumentListener(new DocumentListener() {
 
@@ -418,6 +474,14 @@ public class Ui extends javax.swing.JFrame {
                         addText(nam, map.get(nam));
                     }
                 }
+
+                jTabbedPane1.setBackgroundAt(0, Color.darkGray);
+                jTabbedPane1.setBackgroundAt(1, Color.darkGray);
+                jTabbedPane1.setBackgroundAt(2, Color.darkGray);
+                jTabbedPane1.setBackgroundAt(3, new Color(128, 64, 0));
+                jTabbedPane1.setBackgroundAt(4, new Color(128, 64, 0));
+                jTabbedPane1.setBackgroundAt(5, new Color(128, 64, 0));
+
                 JScrollPane c = (JScrollPane) jTabbedPane1.getComponentAt((int) result[2]);
                 JViewport viewport = c.getViewport();
                 RSyntaxTextArea textArea = (RSyntaxTextArea) viewport.getComponents()[0];
@@ -496,6 +560,7 @@ public class Ui extends javax.swing.JFrame {
 
     final Debouncer debouncer = new Debouncer();
 
+    @SuppressWarnings("CallToPrintStackTrace")
     private void saveGui(String name) {
         if (loaded) {
             int tabIdx = jTabbedPane1.getSelectedIndex();
@@ -504,24 +569,28 @@ public class Ui extends javax.swing.JFrame {
             jButton10.setVisible(!tab.equals("_Scheduler_") && !tab.equals("_Input_") && !tab.equals("_Read_"));
             jButton11.setVisible(!tab.equals("_Scheduler_") && !tab.equals("_Input_") && !tab.equals("_Read_"));
             final JFrame este = this;
-            debouncer
-                    .debounce(Void.class, () -> {
-                        System.out.println(
-                                "saving...");
-                        try {
-                            File file = new File(name);
-                            Files.write(file.toPath(), object2Bytes(new Object[]{getBounds(), map, tabIdx, jSplitPane1.getDividerLocation(), caretPosition, selStart, selEnd}));
-                            updateInput();
-                            System.out.println("saved...Ok");
-                        } catch (java.nio.channels.ClosedByInterruptException e) {
-                            System.out.println("saved...Fail");
-                        } catch (IOException e) {
-                            JOptionPane.showMessageDialog(este, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
-                            e.printStackTrace();
-                            System.out.println("saved...Fail");
-                        }
-
-                    }, 1000, TimeUnit.MILLISECONDS);
+            debouncer.debounce(Void.class, () -> {
+                try {
+                    File file = new File(name);
+                    Files.write(file.toPath(),
+                            object2Bytes(new Object[]{
+                                getBounds(),
+                                map,
+                                tabIdx,
+                                jSplitPane1.getDividerLocation(),
+                                caretPosition,
+                                selStart,
+                                selEnd
+                            }));
+                    updateInput();
+                } catch (java.nio.channels.ClosedByInterruptException e) {
+                    System.out.println("saved...Fail");
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(este, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+                    e.printStackTrace();
+                    System.out.println("saved...Fail");
+                }
+            }, 1000, TimeUnit.MILLISECONDS);
         }
     }
 
@@ -537,11 +606,21 @@ public class Ui extends javax.swing.JFrame {
     private void initComponents() {
 
         jDialog1 = new javax.swing.JDialog();
+        jToolBar1 = new javax.swing.JToolBar();
+        jSplitPane2 = new javax.swing.JSplitPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jToolBar1 = new javax.swing.JToolBar();
         jScrollPane3 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
+        jDialog2 = new javax.swing.JDialog();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList();
+        jPanel5 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -569,6 +648,11 @@ public class Ui extends javax.swing.JFrame {
 
         jDialog1.setModal(true);
 
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+        jDialog1.getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_END);
+
+        jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -587,21 +671,77 @@ public class Ui extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
-        jDialog1.getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        jSplitPane2.setLeftComponent(jScrollPane2);
 
-        jToolBar1.setFloatable(false);
-        jToolBar1.setRollover(true);
-        jDialog1.getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_END);
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setMaximumSize(new java.awt.Dimension(4096, 4096));
+        jScrollPane3.setMinimumSize(new java.awt.Dimension(0, 0));
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(0, 0));
 
-        jScrollPane3.setMaximumSize(new java.awt.Dimension(320, 32767));
-        jScrollPane3.setMinimumSize(new java.awt.Dimension(320, 20));
-        jScrollPane3.setPreferredSize(new java.awt.Dimension(320, 24));
-
+        jEditorPane1.setEditable(false);
         jEditorPane1.setContentType("text/html"); // NOI18N
+        jEditorPane1.setMaximumSize(new java.awt.Dimension(4096, 4096));
+        jEditorPane1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jEditorPane1.setPreferredSize(new java.awt.Dimension(0, 0));
         jScrollPane3.setViewportView(jEditorPane1);
-        jEditorPane1.getAccessibleContext().setAccessibleDescription("text/html\n");
 
-        jDialog1.getContentPane().add(jScrollPane3, java.awt.BorderLayout.LINE_END);
+        jSplitPane2.setRightComponent(jScrollPane3);
+
+        jDialog1.getContentPane().add(jSplitPane2, java.awt.BorderLayout.CENTER);
+
+        jDialog2.setTitle("TAB CONFIGURATION");
+        jDialog2.setModal(true);
+
+        jList2.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(jList2);
+
+        jDialog2.getContentPane().add(jScrollPane4, java.awt.BorderLayout.CENTER);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Color" }));
+
+        jLabel2.setText("Color");
+
+        jCheckBox3.setText("Visible");
+
+        jButton13.setText("<");
+
+        jButton14.setText(">");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCheckBox3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, 0, 224, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton14)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jButton13)
+                    .addComponent(jButton14))
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        jDialog2.getContentPane().add(jPanel5, java.awt.BorderLayout.PAGE_END);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("JSoup Scheduler");
@@ -861,6 +1001,7 @@ public class Ui extends javax.swing.JFrame {
 
         jSplitPane1.setRightComponent(jPanel2);
 
+        jTabbedPane1.setForeground(java.awt.Color.white);
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
@@ -1132,18 +1273,63 @@ public class Ui extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyPressed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+        jDialog2.pack();
+        jDialog2.setLocationRelativeTo(this);
+        jDialog2.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void tableSel() {
         int[] cols = jTable1.getSelectedColumns();
         int[] rows = jTable1.getSelectedRows();
         if (cols.length == 1 && rows.length == 1) {
-            org.bson.Document doc = docs.get(rows[0]);
+            int idIdx = -1;
+            for (int i = 0; i < jTable1.getColumnCount(); i++) {
+                if (jTable1.getColumnName(i).equals("_id")) {
+                    idIdx = i;
+                    break;
+                }
+            }
+            int row = rows[0];
+
+            String id = jTable1.getValueAt(row, idIdx).toString();
+            org.bson.Document doc = docs.get(id);
 
             StringBuilder sb = new StringBuilder();
-            for (String key : doc.keySet()) {
-                sb.append("<b>").append(key).append(":</b>").append(doc.get(key)).append("<br><br>");
+
+            HashSet<String> set = new HashSet<>();
+            for (int i = 0; i < jTable1.getColumnCount(); i++) {
+                String key = jTable1.getColumnName(i);
+                set.add(key);
+                sb.append("<b>").append(key).append(": </b>").append(doc.get(key)).append("<br><br>");
+            }
+            LinkedList<String> list = new LinkedList<>(doc.keySet());
+            Collections.sort(list);
+            for (String c : list) {
+                if (!set.contains(c)) {
+                    sb.append("<b>").append(c).append(": </b>").append(doc.get(c)).append("<br><br>");
+                }
+
+            }
+
+            if (words != null) {
+                String[] colors = new String[]{"red", "yellow", "blue", "green", "orange", "cyan"};
+                int wordIdx = 0;
+
+                for (String s : words) {
+                    StringBuilder sb2 = new StringBuilder();
+                    Matcher m = Pattern.compile(s).matcher(sb.toString());
+                    int p = 0;
+                    while (m.find()) {
+                        sb2.append(sb.substring(p, m.start()));
+                        sb2.append("<span style='color:").append(colors[wordIdx]).append("'> ");
+                        sb2.append(m.group()).append(" </span>");
+                        p = m.end();
+                    }
+                    sb2.append(sb.substring(p));
+                    wordIdx++;
+                    sb = sb2;
+                }
+
             }
             jEditorPane1.setText(sb.toString());
             jEditorPane1.setCaretPosition(0);
@@ -1373,6 +1559,8 @@ public class Ui extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1383,21 +1571,30 @@ public class Ui extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList jList1;
+    private javax.swing.JList jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
+
 }

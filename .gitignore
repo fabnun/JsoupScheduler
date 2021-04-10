@@ -5,3 +5,4 @@
 /JsoupScheduler.zip
 /lockfile
 /*.log
+/logHistory/*.log
