@@ -98,7 +98,7 @@ public class Ui extends javax.swing.JFrame {
 
     public static TreeMap<String, TabModel> map = new TreeMap<>();
     public static TreeMap<String, String> input = new TreeMap<>();
-    public static DefaultListModel<BeanShellProcess> listModel;
+    public static DefaultListModel<BeanShellProcess> listModel = new DefaultListModel<>();
     public static Ui instance;
 
     int buttonTable = -1;
@@ -363,7 +363,7 @@ public class Ui extends javax.swing.JFrame {
             jButton11.setVisible(false);
             loadGui();
 
-            listModel = new DefaultListModel<>();
+            
             jList1.setModel(listModel);
             updateInput();
             jTabbedPane1.addChangeListener((ChangeEvent e) -> {
@@ -1238,7 +1238,7 @@ public class Ui extends javax.swing.JFrame {
         for (Object obj : jList1.getSelectedValuesList()) {
             BeanShellProcess interpreter = (BeanShellProcess) obj;
             interpreter.thread.suspend();
-            BeanShellProcess.removeToList(interpreter);
+            interpreter.removeToList();
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 

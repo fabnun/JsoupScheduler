@@ -12,6 +12,7 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -19,14 +20,14 @@ import java.util.Objects;
  */
 public class BeanShellProcess {
 
-    public static final String preCode="log(s){tools.log(s,name);}\nerr(s){tools.err(s,name);}\n";
-    
+    public static final String preCode = "log(s){tools.log(s,name);}\nerr(s){tools.err(s,name);}\n";
+
     public final Thread thread;
     String title;
 
     @SuppressWarnings({"CallToPrintStackTrace", "CallToThreadStartDuringObjectConstruction", "LeakingThisInConstructor"})
     public BeanShellProcess(String title, String code, Map input) {
-        final String finalCode=preCode+code;
+        final String finalCode = preCode + code;
         this.title = title;
         thread = new Thread(() -> {
             Map map = new HashMap<>();
@@ -39,15 +40,15 @@ public class BeanShellProcess {
                 bsh.set("output", map);
                 bsh.set("tools", Ui.tools);
                 bsh.run();
-                removeToList(this);
+                removeToList();
             } catch (Exception e) {
-                Ui.tools.err("SCRIPT " + title+" ERROR");
+                Ui.tools.err("SCRIPT " + title + " ERROR");
                 Ui.tools.err(e.getLocalizedMessage());
             }
         });
         thread.setName(title);
         thread.start();
-        addToList(this);
+        addToList();
     }
 
     @Override
@@ -67,27 +68,30 @@ public class BeanShellProcess {
         return title;
     }
 
-    @SuppressWarnings("SynchronizeOnNonFinalField")
-    static void addToList(BeanShellProcess process) {
-        synchronized (Ui.listModel) {
-            try {
-                Ui.listModel.addElement(process);
-            } catch (Exception e) {
-                System.err.println(">>>>>>> addToList "+e.getLocalizedMessage());
+    @SuppressWarnings({"SynchronizeOnNonFinalField", "SleepWhileHoldingLock"})
+    final void addToList() {
+        SwingUtilities.invokeLater(() -> {
+            synchronized (Ui.listModel) {
+                try {
+                    Ui.listModel.addElement(this);
+                } catch (Exception e) {
+                    System.err.println(">>>>>>> addToList " + e.getLocalizedMessage());
+                }
             }
-        }
+        });
     }
 
-    @SuppressWarnings("SynchronizeOnNonFinalField")
-    static void removeToList(BeanShellProcess process) {
-        synchronized (Ui.listModel) {
-            try {
-                Ui.listModel.removeElement(process);
-            } catch (Exception e) {
-                System.err.println(">>>>>>> removeToList "+e.getLocalizedMessage());
+    @SuppressWarnings({"SynchronizeOnNonFinalField", "SleepWhileHoldingLock"})
+    final void removeToList() {
+        SwingUtilities.invokeLater(() -> {
+            synchronized (Ui.listModel) {
+                try {
+                    Ui.listModel.removeElement(this);
+                } catch (Exception e) {
+                    System.err.println(">>>>>>> removeToList " + e.getLocalizedMessage());
+                }
             }
-            
-        }
+        });
     }
 
 }

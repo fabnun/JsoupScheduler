@@ -16,6 +16,7 @@ import java.util.TimerTask;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -175,25 +176,27 @@ public class Scheduler {
                             }
 
                             String code = map.get(command).text;
-                            boolean found = false;
-                            synchronized (Ui.listModel) {
 
-                                try {
-                                    int size = Ui.listModel.getSize();
-                                    for (int i = 0; i < size; i++) {
-                                        if (Ui.listModel.get(i).title.equals(command)) {
-                                            found = true;
-                                            break;
+                            SwingUtilities.invokeLater(() -> {
+                                synchronized (Ui.listModel) {
+                                    boolean found = false;
+                                    try {
+
+                                        int size = Ui.listModel.getSize();
+                                        for (int i = 0; i < size; i++) {
+                                            if (Ui.listModel.get(i).title.equals(command)) {
+                                                found = true;
+                                                break;
+                                            }
                                         }
+                                    } catch (Exception e) {
+                                        System.err.println(">>>>>>> scheduler check " + e.getLocalizedMessage());
                                     }
-                                } catch (Exception e) {
-                                    System.err.println(">>>>>>> scheduler check " + e.getLocalizedMessage());
+                                    if (!found) {
+                                        new BeanShellProcess(command, code, Ui.input);
+                                    }
                                 }
-
-                            }
-                            if (!found) {
-                                new BeanShellProcess(command, code, Ui.input);
-                            }
+                            });
 
                         }
                     }
