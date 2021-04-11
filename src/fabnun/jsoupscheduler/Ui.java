@@ -31,7 +31,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.io.RandomAccessFile;
-import java.io.Serializable;
 import java.io.StringBufferInputStream;
 import java.nio.channels.FileLock;
 import java.nio.file.Files;
@@ -63,6 +62,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JViewport;
 import javax.swing.KeyStroke;
+import javax.swing.ListModel;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.DocumentEvent;
@@ -96,26 +96,7 @@ public class Ui extends javax.swing.JFrame {
         Locale.setDefault(Locale.ROOT);
     }
 
-    class TabModel implements Comparable<TabModel> , Serializable {
-
-        public String text;
-        public int pos;
-        public boolean hidden = false;
-
-        public TabModel(String text, int pos, boolean hidden) {
-            this.text = text;
-            this.pos = pos;
-            this.hidden = hidden;
-        }
-
-        @Override
-        public int compareTo(TabModel t) {
-            return pos - t.pos;
-        }
-
-    }
-
-    public static TreeMap<String, String> map = new TreeMap<>();
+    public static TreeMap<String, TabModel> map = new TreeMap<>();
     public static TreeMap<String, String> input = new TreeMap<>();
     public static DefaultListModel<BeanShellProcess> listModel;
     public static Ui instance;
@@ -283,7 +264,6 @@ public class Ui extends javax.swing.JFrame {
         setLocationRelativeTo(this);
         jDialog1.setVisible(true);
         System.out.println("RESULT " + buttonTable);
-
     }
 
     private String lastSearch = "";
@@ -302,7 +282,7 @@ public class Ui extends javax.swing.JFrame {
                 if (file.exists()) {
                     Object[] result = (Object[]) bytes2Object(Files.readAllBytes(file.toPath()));
                     setBounds((Rectangle) result[0]);
-                    map = (TreeMap<String, String>) result[1];
+                    map = (TreeMap<String, TabModel>) result[1];
                     updateInput();
                 }
             } catch (IOException | ClassNotFoundException e) {
@@ -464,23 +444,12 @@ public class Ui extends javax.swing.JFrame {
             if (file.exists()) {
                 Object[] result = (Object[]) bytes2Object(Files.readAllBytes(file.toPath()));
                 setBounds((Rectangle) result[0]);
-                map = (TreeMap<String, String>) result[1];
+                map = (TreeMap<String, TabModel>) result[1];
                 jTabbedPane1.removeAll();
-                addText("_Read_", map.get("_Read_"));
-                addText("_Scheduler_", map.get("_Scheduler_"));
-                addText("_Input_", map.get("_Input_"));
                 for (String nam : map.keySet()) {
-                    if (!nam.equals("_Input_") && !nam.equals("_Scheduler_") && !nam.equals("_Read_")) {
-                        addText(nam, map.get(nam));
-                    }
+                    addText(nam, map.get(nam));
                 }
-
-                jTabbedPane1.setBackgroundAt(0, Color.darkGray);
-                jTabbedPane1.setBackgroundAt(1, Color.darkGray);
-                jTabbedPane1.setBackgroundAt(2, Color.darkGray);
-                jTabbedPane1.setBackgroundAt(3, new Color(128, 64, 0));
-                jTabbedPane1.setBackgroundAt(4, new Color(128, 64, 0));
-                jTabbedPane1.setBackgroundAt(5, new Color(128, 64, 0));
+                paintTabs();
 
                 JScrollPane c = (JScrollPane) jTabbedPane1.getComponentAt((int) result[2]);
                 JViewport viewport = c.getViewport();
@@ -497,9 +466,9 @@ public class Ui extends javax.swing.JFrame {
                 jSplitPane1.setDividerLocation((int) result[3]);
 
             } else {
-                addText("_Scheduler_", "bne.found 3h 2h 0h\nbne.page 5m 2h 10h 13h");
+                addText("_Scheduler_", new TabModel("_Scheduler_", "bne.found 3h 2h 0h\nbne.page 5m 2h 10h 13h"));
                 File propFile = new File("default.properties");
-                addText("_Input_", propFile.exists() ? new String(Files.readAllBytes(propFile.toPath())) : "");
+                addText("_Input_", new TabModel("_Input_", propFile.exists() ? new String(Files.readAllBytes(propFile.toPath())) : ""));
             }
 
             loaded = true;
@@ -515,15 +484,14 @@ public class Ui extends javax.swing.JFrame {
     private String data_base_uri = "", data_base = "", data_base_indexes = "", agent = "", timeout = "";
 
     private void updateInput() {
-        String newInput = map.get("_Input_");
+        String newInput = map.get("_Input_").text;
         if (!oldInput.equals(newInput)) {
             Properties properties = new Properties();
             try {
-                properties.load(new StringBufferInputStream(map.get("_Input_")));
+                properties.load(new StringBufferInputStream(map.get("_Input_").text));
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             TreeMap<String, String> _input = new TreeMap<>();
             for (String key : properties.stringPropertyNames()) {
                 String value = properties.getProperty(key);
@@ -692,24 +660,45 @@ public class Ui extends javax.swing.JFrame {
         jDialog2.setTitle("TAB CONFIGURATION");
         jDialog2.setModal(true);
 
-        jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList2.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList2ValueChanged(evt);
+            }
         });
         jScrollPane4.setViewportView(jList2);
 
         jDialog2.getContentPane().add(jScrollPane4, java.awt.BorderLayout.CENTER);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Color" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "negro", "rojo", "verde", "azul", "naranjo", "rosado", "gris", "fucsi" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Color");
 
         jCheckBox3.setText("Visible");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
 
         jButton13.setText("<");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setText(">");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -721,7 +710,7 @@ public class Ui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, 0, 224, Short.MAX_VALUE)
+                .addComponent(jComboBox1, 0, 276, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1010,7 +999,7 @@ public class Ui extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1057,7 +1046,7 @@ public class Ui extends javax.swing.JFrame {
                         .addComponent(jToggleButton1)
                         .addContainerGap())
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1106,7 +1095,7 @@ public class Ui extends javax.swing.JFrame {
         jToggleButton1.setForeground(Color.black);
         jToggleButton1.setText(activo ? "STOP" : "SHEDULE");
         if (activo) {
-            scheduler = new Scheduler(map.get("_Scheduler_"));
+            scheduler = new Scheduler(map.get("_Scheduler_").text);
             scheduler.start(map);
         } else {
             scheduler.stop();
@@ -1235,7 +1224,8 @@ public class Ui extends javax.swing.JFrame {
         String tab = jTabbedPane1.getTitleAt(idx);
         String newName = JOptionPane.showInputDialog(this, "Rename", tab);
         if (newName != null && !newName.trim().equals(tab) && !newName.trim().isEmpty()) {
-            String val = map.get(tab);
+            TabModel val = map.get(tab);
+            val.key = newName;
             map.remove(tab);
             map.put(newName, val);
             jTabbedPane1.setTitleAt(idx, newName);
@@ -1273,9 +1263,22 @@ public class Ui extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyPressed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        jDialog2.pack();
+        String selectedTabName = jTabbedPane1.getTitleAt(jTabbedPane1.getSelectedIndex());
+
+        DefaultListModel<String> dlm = new DefaultListModel<>();
+        LinkedList<TabModel> list = new LinkedList<>(map.values());
+        Collections.sort(list);
+        int pos = 0;
+
+        for (TabModel tab : list) {
+            dlm.addElement(tab.key);
+        }
+        jList2.setModel(dlm);
+        jList2.setSelectedValue(selectedTabName, true);
+        jDialog2.setSize(800, 800);
         jDialog2.setLocationRelativeTo(this);
         jDialog2.setVisible(true);
+
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void tableSel() {
@@ -1362,13 +1365,95 @@ public class Ui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        if (!updateTabCfgFlag) {
+            String tab = jList2.getSelectedValue().toString();
+            map.get(tab).hidden = !map.get(tab).hidden;
+            saveGui();
+        }
+        paintTabs();
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private int[] colorArray = new int[]{
+        Color.black.darker().getRGB(),
+        Color.red.darker().getRGB(),
+        Color.green.darker().getRGB(),
+        Color.blue.darker().getRGB(),
+        Color.orange.darker().getRGB(),
+        Color.pink.darker().getRGB(),
+        Color.gray.darker().getRGB(),
+        Color.magenta.darker().getRGB()
+    };
+
+    private void jList2ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList2ValueChanged
+        updateTabCfgFlag = true;
+        updateTabCfg();
+        updateTabCfgFlag = false;
+    }//GEN-LAST:event_jList2ValueChanged
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        if (!updateTabCfgFlag) {
+            String tab = jList2.getSelectedValue().toString();
+            TabModel model = map.get(tab);
+            model.color = jComboBox1.getSelectedIndex();
+            paintTabs();
+            saveGui();
+        }
+
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void permutarTab(String idxFrom, String idxTo, int idxF, int idxT) {
+        Ui.tools.log(idxFrom + " -> " + idxTo);
+        TabModel tabFrom = map.get(idxFrom);
+        int posFrom = tabFrom.pos;
+        TabModel tabTo = map.get(idxTo);
+        tabFrom.pos = tabTo.pos;
+        tabTo.pos = posFrom;
+        int idx = jTabbedPane1.indexOfTab(idxTo);
+        if (idx > -1) {
+            jTabbedPane1.remove(idx);
+            addText(tabTo.key, tabTo);
+        }
+        DefaultListModel dlm = (DefaultListModel) jList2.getModel();
+        dlm.set(idxT, tabFrom.key);
+        dlm.set(idxF, tabTo.key);
+        jList2.setSelectedValue(tabFrom.key, true);
+        if (!tabFrom.hidden) {
+            idx = jTabbedPane1.indexOfTab(idxFrom);
+            if (idx > -1) {
+                jTabbedPane1.setSelectedIndex(idx);
+            }
+        }
+        paintTabs();
+        saveGui();
+    }
+
+    @SuppressWarnings("element-type-mismatch")
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        int idx = jList2.getSelectedIndex();
+        if (idx > 0) {
+            ListModel dlm = jList2.getModel();
+            permutarTab(map.get(dlm.getElementAt(idx)).key, map.get(dlm.getElementAt(idx - 1)).key, idx, idx - 1);
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    @SuppressWarnings("element-type-mismatch")
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        int idx = jList2.getSelectedIndex();
+        int size = jList2.getModel().getSize();
+        if (idx < size - 1) {
+            ListModel dlm = jList2.getModel();
+            permutarTab(map.get(dlm.getElementAt(idx)).key, map.get(dlm.getElementAt(idx + 1)).key, idx, idx + 1);
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
     private void run() {
         String title = jTabbedPane1.getTitleAt(jTabbedPane1.getSelectedIndex());
-        new BeanShellProcess(title, map.get(title), Ui.input);
+        new BeanShellProcess(title, map.get(title).text, Ui.input);
     }
 
     private void addText(String name) {
-        addText(name, "");
+        addText(name, new TabModel(name, ""));
     }
 
     private void initTextArea(JTextArea textArea) {
@@ -1451,13 +1536,13 @@ public class Ui extends javax.swing.JFrame {
 
     private int caretPosition = 0, selStart, selEnd;
 
-    private void addText(final String name, String text) {
+    private void addText(final String name, final TabModel tab) {
         for (int i = 0; i < jTabbedPane1.getComponentCount(); i++) {
             if (jTabbedPane1.getTitleAt(i).equals(name)) {
                 JScrollPane c = (JScrollPane) jTabbedPane1.getComponentAt(i);
                 JViewport viewport = c.getViewport();
                 RSyntaxTextArea textArea = (RSyntaxTextArea) viewport.getComponents()[0];
-                textArea.setText(text);
+                textArea.setText(tab.text);
                 initTextArea(textArea);
                 return;
             }
@@ -1487,11 +1572,23 @@ public class Ui extends javax.swing.JFrame {
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(textArea);
-        textArea.setText(text);
+        textArea.setText(tab.text);
         initTextArea(textArea);
 
-        jTabbedPane1.addTab(name, scrollPane);
-        map.put(name, text);
+        int tabPos = jTabbedPane1.getTabCount();
+        if (tab.pos != -1) {
+            for (int i = 0; i < jTabbedPane1.getTabCount(); i++) {
+                String tabName = jTabbedPane1.getTitleAt(i);
+                TabModel model = map.get(tabName);
+                if (model.pos > tab.pos) {
+                    tabPos = i;
+                    break;
+                }
+            }
+        }
+
+        jTabbedPane1.insertTab(name, null, scrollPane, "", tabPos);
+        map.put(name, tab);
         textArea.addCaretListener((CaretEvent ce) -> {
             saveGui();
             caretPosition = textArea.getCaretPosition();
@@ -1503,19 +1600,19 @@ public class Ui extends javax.swing.JFrame {
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                map.put(name, textArea.getText());
+                tab.text = textArea.getText();
                 saveGui();
             }
 
             @Override
             public void insertUpdate(DocumentEvent e) {
-                map.put(name, textArea.getText());
+                tab.text = textArea.getText();
                 saveGui();
             }
 
             @Override
             public void changedUpdate(DocumentEvent arg0) {
-                map.put(name, textArea.getText());
+                tab.text = textArea.getText();
                 saveGui();
             }
         });
@@ -1596,5 +1693,51 @@ public class Ui extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
+
+    private boolean updateTabCfgFlag = false;
+
+    private void updateTabCfg() {
+        updateTabCfgFlag = true;
+        String tab = (String) jList2.getSelectedValue();
+        if (tab != null) {
+            TabModel model = map.get(tab);
+            jCheckBox3.setSelected(model.hidden);
+            jComboBox1.setSelectedIndex(model.color);
+            int idx = jTabbedPane1.indexOfTab(tab);
+            if (idx > -1) {
+                jTabbedPane1.setSelectedIndex(idx);
+            }
+        }
+        updateTabCfgFlag = false;
+    }
+
+    private void paintTabs() {
+        int size = jTabbedPane1.getTabCount();
+
+        LinkedList<Integer> removeList = new LinkedList<>();
+        LinkedList<String> tabs = new LinkedList<>();
+        for (int i = 0; i < size; i++) {
+            String tabName = jTabbedPane1.getTitleAt(i);
+            TabModel model = map.get(tabName);
+            if (model.hidden) {
+                System.out.println("remove " + tabName);
+                removeList.add(i);
+            } else {
+                tabs.add(tabName);
+                jTabbedPane1.setBackgroundAt(i, new Color(colorArray[model.color]));
+            }
+        }
+        for (int i = removeList.size() - 1; i >= 0; i--) {
+            jTabbedPane1.remove(removeList.get(i));
+        }
+        for (String key : map.keySet()) {
+            TabModel model = map.get(key);
+            if (!tabs.contains(key) && !model.hidden) {
+                System.out.println("add " + key);
+                addText(key, model);
+                jTabbedPane1.setBackgroundAt(jTabbedPane1.indexOfTab(key), new Color(colorArray[model.color]));
+            }
+        }
+    }
 
 }

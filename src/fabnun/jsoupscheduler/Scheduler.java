@@ -56,7 +56,7 @@ public class Scheduler {
         return l;
     }
 
-    public void start(TreeMap<String, String> map) {
+    public void start(TreeMap<String, TabModel> map) {
         for (Job job : jobs) {
             job.start(map);
         }
@@ -105,7 +105,7 @@ public class Scheduler {
             timer.cancel();
         }
 
-        public void start(TreeMap<String, String> map) {
+        public void start(TreeMap<String, TabModel> map) {
             timer = new Timer("");
             timer.schedule(new TimerTask() {
                 long day = 0, lastDay = 0;
@@ -174,7 +174,7 @@ public class Scheduler {
                                 sb.append(" ").append(sdf.format(new Date(l + day)));
                             }
 
-                            String code = map.get(command);
+                            String code = map.get(command).text;
                             boolean found = false;
                             synchronized (Ui.listModel) {
 
