@@ -4,5 +4,6 @@
 /spider.cfg
 /JsoupScheduler.zip
 /lockfile
-/*.log
-/logHistory/*.log
+/err.log
+/out.log
+/**/*.log
