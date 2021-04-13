@@ -26,6 +26,7 @@ class TabModel implements Comparable<TabModel>, Serializable {
             this.pos = pos;
             this.color = color;
             this.hidden = hidden;
+            this.key=key;
         }
 
         public TabModel(String key, String text, int pos, int color) {

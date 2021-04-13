@@ -60,46 +60,51 @@ public final class Tools {
     public Tools(String uri, String database, String indexes, String agent, int timeOut) {
         this.agent = agent;
         this.timeOut = timeOut;
-        DB = new MongoClient(new MongoClientURI(uri)).getDatabase(database);
-        String dbIndexes = indexes;
-        if (dbIndexes != null && !dbIndexes.trim().isEmpty()) {
-            for (String s : dbIndexes.split(",")) {
-                s = s.trim();
-                try {
-                    int idx = s.indexOf(".");
-                    int idx1 = s.lastIndexOf(".");
-                    String coll = s.substring(0, idx);
-                    String type = s.substring(idx1 + 1);
-                    boolean unique = type.endsWith("!");
-                    if (unique) {
-                        type = type.substring(0, type.length() - 1);
+        try {
+            DB = new MongoClient(new MongoClientURI(uri)).getDatabase(database);
+
+            String dbIndexes = indexes;
+            if (dbIndexes != null && !dbIndexes.trim().isEmpty()) {
+                for (String s : dbIndexes.split(",")) {
+                    s = s.trim();
+                    try {
+                        int idx = s.indexOf(".");
+                        int idx1 = s.lastIndexOf(".");
+                        String coll = s.substring(0, idx);
+                        String type = s.substring(idx1 + 1);
+                        boolean unique = type.endsWith("!");
+                        if (unique) {
+                            type = type.substring(0, type.length() - 1);
+                        }
+                        s = s.substring(idx + 1, idx1);
+                        String[] ss = s.split("\\.");
+                        switch (type) {
+                            case "asc":
+                                dbIdxAscending(coll, ss, unique);
+                                break;
+                            case "des":
+                                dbIdxDescending(coll, ss, unique);
+                                break;
+                            case "txt":
+                                for (String sss : ss) {
+                                    dbIdxText(coll, sss, unique);
+                                }
+                                break;
+                            case "geo":
+                                dbIdxGeo(coll, ss, unique);
+                                break;
+                            default:
+                                err("Error en indice: " + s);
+                                break;
+                        }
+                    } catch (Exception e) {
+                        err("ERROR MONGODB INDEX " + s);
+                        err(e.getLocalizedMessage());
                     }
-                    s = s.substring(idx + 1, idx1);
-                    String[] ss = s.split("\\.");
-                    switch (type) {
-                        case "asc":
-                            dbIdxAscending(coll, ss, unique);
-                            break;
-                        case "des":
-                            dbIdxDescending(coll, ss, unique);
-                            break;
-                        case "txt":
-                            for (String sss : ss) {
-                                dbIdxText(coll, sss, unique);
-                            }
-                            break;
-                        case "geo":
-                            dbIdxGeo(coll, ss, unique);
-                            break;
-                        default:
-                            err("Error en indice: " + s);
-                            break;
-                    }
-                } catch (Exception e) {
-                    err("ERROR MONGODB INDEX " + s);
-                    err(e.getLocalizedMessage());
                 }
             }
+        } catch (Exception e) {
+            err(e);
         }
     }
 
@@ -395,8 +400,9 @@ public final class Tools {
         err(msg, "");
     }
 
+    @SuppressWarnings("CallToPrintStackTrace")
     public void err(Object msg, String context) {
-        System.err.println(sdf.format(new Date()) + "," + context + "," + msg);
+            System.err.println(sdf.format(new Date()) + "," + context + "," + msg);
     }
 
     public void err(char msg, String context) {
